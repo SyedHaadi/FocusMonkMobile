@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">718163271075-gvpp6qn4vgkrujcfvf8phiqj8vckev93.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">718163271075</string>
+    <string name="google_api_key" translatable="false">AIzaSyBz5gR17213Q4ZigCplFt0ayZiHFRaCRW8</string>
+    <string name="google_app_id" translatable="false">1:718163271075:android:b042d239b4e261b3b30e16</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBz5gR17213Q4ZigCplFt0ayZiHFRaCRW8</string>
+    <string name="google_storage_bucket" translatable="false">focusmonk-19f19.appspot.com</string>
+    <string name="project_id" translatable="false">focusmonk-19f19</string>
+</resources>

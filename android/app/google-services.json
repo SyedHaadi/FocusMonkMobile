@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "718163271075",
+    "project_id": "focusmonk-19f19",
+    "storage_bucket": "focusmonk-19f19.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718163271075:android:b042d239b4e261b3b30e16",
+        "android_client_info": {
+          "package_name": "com.focusmonk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718163271075-vu11n29eh5e8h0ihedua6s81pr2npuid.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.focusmonk",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "718163271075-gvpp6qn4vgkrujcfvf8phiqj8vckev93.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBz5gR17213Q4ZigCplFt0ayZiHFRaCRW8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "718163271075-gvpp6qn4vgkrujcfvf8phiqj8vckev93.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
