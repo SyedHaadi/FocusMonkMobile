@@ -75,8 +75,8 @@ public class MyService extends AccessibilityService {
                     || event.getEventType() == AccessibilityEvent.TYPE_WINDOWS_CHANGED
                     || event.getEventType() == AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED
             ) {
-                sharedPreferences = getSharedPreferences(Constant.pref,MODE_PRIVATE);
 
+                sharedPreferences = getSharedPreferences(Constant.pref,MODE_PRIVATE);
                 String token = sharedPreferences.getString(Constant.Token,"null");
 
                 if (!token.equals("null")){
@@ -177,12 +177,11 @@ public class MyService extends AccessibilityService {
                                                 am.killBackgroundProcesses(p);
                                             }catch (Exception ignored){
                                             }
+                                            Toast.makeText(this, "This App is not in your Focus Environment", Toast.LENGTH_SHORT).show();
                                         }
 
                                         if (obj.getBoolean("isOpen")){
-
                                             makeDistract();
-
                                         }
                                     }
                                 }
@@ -350,6 +349,32 @@ public class MyService extends AccessibilityService {
 
     }
 
+    public boolean calculate_break(ArrayList<ScheduleModel> check){
+        Calendar calendar = Calendar.getInstance();
+        int current_hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int current_minute = calendar.get(Calendar.MINUTE);
+
+        List<Integer> break_hours = Arrays.asList(check.get(0).getBreak_hours());
+        if (break_hours.contains(current_hour)) {
+            int last_index = break_hours.size() - 1;
+
+            String y = break_hours.get(0) + ":" + check.get(0).getBreak_start_time();
+            String z = break_hours.get(last_index) + ":" + check.get(0).getBreak_end_time();
+            String x = current_hour + ":" + current_minute;
+
+            if (x.compareTo(y) >= 0 && x.compareTo(z) < 0) {
+                return false;
+            } else {
+                return true;
+            }
+
+        } else {
+            return true;
+        }
+
+    }
+
+
     private ArrayList<ScheduleModel> get_schedule_data(JSONArray jsonArray, int current_day) throws JSONException {
         ArrayList<ScheduleModel> check = new ArrayList<>();
         for (int i = 0; i < jsonArray.length(); i++) {
@@ -384,26 +409,6 @@ public class MyService extends AccessibilityService {
         }
 
         return check;
-    }
-
-    public boolean calculate_break(ArrayList<ScheduleModel> check){
-        Calendar calendar = Calendar.getInstance();
-        int current_hour = calendar.get(Calendar.HOUR_OF_DAY);
-        int current_minute = calendar.get(Calendar.MINUTE);
-
-        List<Integer> break_hours = Arrays.asList(check.get(0).getBreak_hours());
-        if (break_hours.contains(current_hour)) {
-            int last_index = break_hours.size() - 1;
-
-            String y = break_hours.get(last_index) + ":" + check.get(0).getBreak_start_time();
-            String z = break_hours.get(0) + ":" + check.get(0).getBreak_end_time();
-            String x = current_hour + ":" + current_minute;
-
-            return x.compareTo(y) < 0 || x.compareTo(z) >= 0;
-
-        } else {
-            return true;
-        }
     }
 
     private void Api(boolean b) {

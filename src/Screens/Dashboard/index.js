@@ -127,6 +127,8 @@ const Dashboard = ({ navigation }) => {
         if (checklogin) {
             let status = await calculate_schedule();
 
+            console.log("Duty Time: ",status);
+
             setTimeout(async () => {
                 if (status == true) {
                     const companyId = await getLocalStorage(STORAGE_KEYS.COMPANY_ID);
@@ -300,7 +302,6 @@ const Dashboard = ({ navigation }) => {
         let break_hours = check[0].break_hours;
 
         if (break_hours.includes(current_hour)) {
-            // let index = break_hours.indexOf(current_hour);
             let lastindex = break_hours.length - 1;
 
             let y = break_hours[0] + ":" + check[0].break_start_minute;
@@ -313,36 +314,6 @@ const Dashboard = ({ navigation }) => {
                 return true;
             }
 
-            // if (lastindex == 0) {
-            //     let y = current_hour + ":" + check[0].break_start_minute;
-            //     let z = current_hour + ":" + check[0].break_end_minute;
-            //     let x = current_hour + ":" + current_minute;
-            //     if (x >= y && x < z) {
-            //         return false;
-            //     } else {
-            //         return true;
-            //     }
-            // } else if (index == 0) {
-            //     let y = current_hour + ":" + check[0].break_start_minute;
-            //     let z = current_hour + ":" + current_minute;
-
-            //     if (z >= y) {
-            //         return false;
-            //     } else {
-            //         return true;
-            //     }
-            // } else if (index == lastindex) {
-            //     let y = current_hour + ":" + check[0].break_end_minute;
-            //     let z = current_hour + ":" + current_minute;
-
-            //     if (z >= y) {
-            //         return true;
-            //     } else {
-            //         return false;
-            //     }
-            // } else {
-            //     return true;
-            // }
         } else {
             return true;
         }
@@ -383,9 +354,9 @@ const Dashboard = ({ navigation }) => {
         let total = 24 * 60;
         let totalTime = final / total;
         let per = totalTime * 100;
-    
+
         return per;
-      }
+    }
 
     const startBackgroundService = async () => {
         if (!BackgroundService.isRunning()) {
@@ -437,7 +408,7 @@ const Dashboard = ({ navigation }) => {
                         {
                             userData ?
                                 userData?.company_id?.isCompanyadmin ?
-                                    <Text style={styles.companyText} >Company Name : <Text style={[styles.companyText, { color: Color.PrimaryColor, fontSize: height_screen * 0.018, }]} >
+                                    <Text style={styles.companyText} >Company Name: <Text style={[styles.companyText, { color: Color.PrimaryColor, fontSize: height_screen * 0.018, }]} >
                                         {
                                             ((userData?.company_id?.companyname)?.length > 15) ?
                                                 (((userData?.company_id?.companyname)?.substring(0, 15 - 3)) + ' ...') :

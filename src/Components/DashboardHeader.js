@@ -45,12 +45,18 @@ const DashboardHeader = ({
                   (((userData?.designation)?.substring(0, 22 - 3)) + ' ...') :
                   userData?.designation}
               </Text>
-              <Text style={styles.companyText} >Company Name: <Text style={[styles.companyText, { color: Color.White }]} >
-                {((userData?.company_id?.companyname)?.length > 14) ?
-                  (((userData?.company_id?.companyname)?.substring(0, 14 - 3)) + ' ...') :
-                  userData?.company_id?.companyname}
-              </Text>
-              </Text>
+
+              {userData?.company_id?.isCompanyadmin ?
+                <Text style={styles.companyText} >Company Name: <Text style={[styles.companyText, { color: Color.White }]} >
+                  {((userData?.company_id?.companyname)?.length > 14) ?
+                    (((userData?.company_id?.companyname)?.substring(0, 14 - 3)) + ' ...') :
+                    userData?.company_id?.companyname}
+                </Text>
+                </Text>
+
+                :
+                null
+              }
             </View>
             :
             null
