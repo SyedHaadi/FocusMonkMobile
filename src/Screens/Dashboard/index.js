@@ -127,7 +127,7 @@ const Dashboard = ({ navigation }) => {
         if (checklogin) {
             let status = await calculate_schedule();
 
-            console.log("Duty Time: ",status);
+            console.log("Duty Time: ", status);
 
             setTimeout(async () => {
                 if (status == true) {
@@ -458,9 +458,11 @@ const Dashboard = ({ navigation }) => {
                         <Text style={styles.perText} >{percentage()?.toFixed(0)}%</Text>
                     </View>
 
-                    <View style={styles.lineView}>
+                    <View style={{position:'relative'}}>
+                        <View style={styles.lineView}>
+                            <View style={{ height: '100%', width: `${percentage()?.toFixed(0)}%`, backgroundColor: Color.PrimaryColor, borderRadius: height_screen * 0.01, }}></View>
+                        </View>
                         <Image source={require('../../Assets/icons/coin.png')} style={styles.coinImgView} />
-                        <View style={{ height: '100%', width: `${percentage()?.toFixed(0)}%`, backgroundColor: Color.PrimaryColor, borderRadius: height_screen * 0.01, }}></View>
                     </View>
 
                     <View style={styles.totalCoinsView}>
@@ -509,7 +511,7 @@ const Dashboard = ({ navigation }) => {
                     </View>
                     <View style={{ marginLeft: -5 }}>
                         <View style={{ width: '90%', alignSelf: 'flex-end', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-                            <Text style={[styles.timeText, { marginRight: 'auto', marginLeft: -height_screen * 0.015 }]}>Distracted Time</Text>
+                            <Text style={[styles.timeText, { marginRight: 'auto', marginLeft: -height_screen * 0.015 }]}>Distract Time</Text>
                             <Text style={[styles.hoursText, { color: Color.LightRed }]} >
                                 {timeData?.time
                                     ? timeData?.time?.distracthour + " hours"

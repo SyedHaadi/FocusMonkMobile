@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
         fontFamily: Font.Medium,
         fontSize: height_screen * 0.014,
         color: Color.Grey,
-        marginTop: height_screen * 0.002
+        marginTop: height_screen * 0.0035
     },
     trophyView: {
         backgroundColor: Color.Pink,
@@ -136,6 +136,7 @@ const styles = StyleSheet.create({
         marginTop: height_screen * 0.002
     },
     coinsView: {
+        position:'relative',
         width: '100%',
         borderRadius: height_screen * 0.015,
         paddingHorizontal: '5%',
@@ -167,6 +168,7 @@ const styles = StyleSheet.create({
         alignSelf: 'flex-end'
     },
     lineView: {
+        position:'relative',
         height: height_screen * 0.012,
         width: '100%',
         borderRadius: height_screen * 0.01,
@@ -185,8 +187,9 @@ const styles = StyleSheet.create({
         position: 'absolute',
         resizeMode: 'contain',
         zIndex: 1,
-        marginTop: -height_screen * 0.019,
-        marginLeft: -height_screen * 0.022
+        top: -height_screen * 0.019,
+        left: -height_screen * 0.022,
+        transform:'translate(-0px , -0px)',
     },
     totalCoinsView: {
         marginTop: height_screen * 0.035,
@@ -214,7 +217,7 @@ const styles = StyleSheet.create({
     },
     hoursText: {
         fontFamily: Font.Medium,
-        fontSize: height_screen * 0.017,
+        fontSize: height_screen * 0.0145,
         alignSelf: 'flex-end'
     },
     hoursLineView: {
@@ -256,7 +259,7 @@ const styles = StyleSheet.create({
     },
     timeText: {
         fontFamily: Font.Regular,
-        fontSize: height_screen * 0.0152,
+        fontSize: height_screen * 0.0145,
         color: Color.Grey
     },
     trophyImg: {

@@ -111,14 +111,14 @@ const Achievements = ({ navigation }) => {
 
 
                 <View style={styles.mainView}>
-                    <View style={[styles.trackView, { justifyContent: 'flex-end', paddingBottom: height_screen * 0.04, alignItems: 'center' }]}>
+                    <View style={[styles.trackView, { justifyContent: 'flex-end', paddingBottom: height_screen * 0, alignItems: 'center' }]}>
                         <ScrollView
                             overScrollMode='never'
                             showsVerticalScrollIndicator={false}
                             showsHorizontalScrollIndicator={false}
                             ref={scrollViewRef}
                             onContentSizeChange={() => scrollViewRef.current.scrollToEnd({ animated: false })}
-                            contentContainerStyle={{ width: Platform.OS === 'android' ? width_screen * 0.7 : width_screen * 0.6, alignItems: 'center', paddingVertical: height_screen * 0.02, marginTop: roadMap.length <= 2 ? 'auto' : 'auto', marginLeft: Platform.OS === 'android' ? 0 : height_screen * 0.025 }}>
+                            contentContainerStyle={{ width: Platform.OS === 'android' ? width_screen * 0.7 : width_screen * 0.6, alignItems: 'center', paddingVertical: height_screen * 0.034, marginTop: roadMap.length <= 2 ? 'auto' : 0, marginLeft: Platform.OS === 'android' ? 0 : height_screen * 0.025 }}>
                             {
                                 roadMap?.map((value, index) => (
                                     <View>

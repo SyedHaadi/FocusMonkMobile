@@ -399,6 +399,7 @@ const ProfileSetting = ({ navigation }) => {
                             width='95'
                             title='Phone Number'
                             editable={true}
+                            keyBoardType='number-pad'
                         // onPress={() => setShowPassword(!showPassword)}
                         />
                         <EditInput

@@ -18,6 +18,7 @@ const EditInput = (props) => {
                     placeholderTextColor={props.placeholderTextColor}
                     secureTextEntry={props.secureTextEntry}
                     editable={props.editable}
+                    keyboardType={props.keyBoardType}
                 />
                 {
                     props.editable ?
