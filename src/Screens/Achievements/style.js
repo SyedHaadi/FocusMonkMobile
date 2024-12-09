@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
         height: height_screen * 0.035,
         width: width_screen * 0.065,
         resizeMode: 'contain',
-        marginRight: width_screen * 0.015
+        marginRight: width_screen * 0.012
     },
     iconView2: {
         height: height_screen * 0.05,
@@ -157,39 +157,41 @@ const styles = StyleSheet.create({
     view1: {
         flexDirection: 'row',
         alignItems: 'center',
-        width: '50%'
+        width: width_screen * 0.27,
+        marginRight: width_screen * 0.02
     },
     view2: {
         flexDirection: 'row',
         alignItems: 'center',
-        width: '30%',
+        width: width_screen * 0.24,
+        marginLeft: width_screen * 0.07
     },
     view3: {
         flexDirection: 'row',
         alignItems: 'center',
-        width: '20%'
+        width: width_screen * 0.2,
+
     },
     title1: {
         flexDirection: 'row',
         alignItems: 'center',
-        width: '50%'
+        width: width_screen * 0.37,
+        paddingLeft: width_screen * 0.022
     },
     title2: {
         flexDirection: 'row',
         alignItems: 'center',
-        width: '30%'
+        width: width_screen * 0.24,
     },
     title3: {
         flexDirection: 'row',
         alignItems: 'center',
-        width: '20%',
+        width: width_screen * 0.2,
     },
     srText: {
         fontFamily: Font.Light,
         fontSize: height_screen * 0.012,
         color: Color.Grey,
-        marginRight: width_screen * 0.02,
-        marginLeft: -width_screen * 0.022,
         marginTop: height_screen * 0.001
     },
     statusText: {
@@ -205,7 +207,7 @@ const styles = StyleSheet.create({
     baseView: {
         marginLeft: -height_screen * 0.02,
         height: height_screen * 0.02,
-        width: height_screen * 0.05,
+        width: height_screen * 0.054,
         backgroundColor: Color.PrimaryColor,
         transform: [{ rotate: '-90deg' }],
         justifyContent: 'center',
@@ -236,8 +238,47 @@ const styles = StyleSheet.create({
         fontFamily: Font.Medium,
         fontSize: height_screen * 0.018,
         color: Color.PrimaryColor,
-        marginTop:height_screen*0.02
-    }
+        marginTop: height_screen * 0.02
+    },
+    centeredView: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    },
+    modalView: {
+        margin: 20,
+        borderRadius: 20,
+        padding: 35,
+        alignItems: 'center',
+
+
+    },
+    closeButton: {
+        top: -height_screen * 0.035,
+        marginLeft: 'auto',
+        marginRight: width_screen * 0.05
+    },
+    image: {
+        width: width_screen * 1,
+        height: height_screen * 0.5,
+        resizeMode: 'contain'
+    },
+
+    container: {
+        height: '80%',
+        width: width_screen * 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    imageContainer: {
+        width: '100%',
+        height: '100%',
+    },
+    image2: {
+        width: '100%',
+        height: '100%',
+    },
 })
 
 export default styles;

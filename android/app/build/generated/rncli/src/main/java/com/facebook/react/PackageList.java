@@ -15,6 +15,12 @@ import java.util.ArrayList;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 // @react-native-firebase/app
 import io.invertase.firebase.app.ReactNativeFirebaseAppPackage;
+// @react-native-firebase/auth
+import io.invertase.firebase.auth.ReactNativeFirebaseAuthPackage;
+// @react-native-google-signin/google-signin
+import com.reactnativegooglesignin.RNGoogleSigninPackage;
+// lottie-react-native
+import com.airbnb.android.react.lottie.LottiePackage;
 // react-native-background-actions
 import com.asterinet.react.bgactions.BackgroundActionsPackage;
 // react-native-device-info
@@ -23,6 +29,10 @@ import com.learnium.RNDeviceInfo.RNDeviceInfo;
 import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 // react-native-image-picker
 import com.imagepicker.ImagePickerPackage;
+// react-native-keep-awake
+import com.corbt.keepawake.KCKeepAwakePackage;
+// react-native-localize
+import com.zoontek.rnlocalize.RNLocalizePackage;
 // react-native-reanimated
 import com.swmansion.reanimated.ReanimatedPackage;
 // react-native-safe-area-context
@@ -33,8 +43,12 @@ import com.swmansion.rnscreens.RNScreensPackage;
 import cl.json.RNSharePackage;
 // react-native-splash-screen
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
+// react-native-system-setting
+import com.ninty.system.setting.SystemSettingPackage;
 // react-native-vector-icons
 import com.oblador.vectoricons.VectorIconsPackage;
+// react-native-webview
+import com.reactnativecommunity.webview.RNCWebViewPackage;
 
 public class PackageList {
   private Application application;
@@ -82,16 +96,23 @@ public class PackageList {
       new MainReactPackage(mConfig),
       new AsyncStoragePackage(),
       new ReactNativeFirebaseAppPackage(),
+      new ReactNativeFirebaseAuthPackage(),
+      new RNGoogleSigninPackage(),
+      new LottiePackage(),
       new BackgroundActionsPackage(),
       new RNDeviceInfo(),
       new RNGestureHandlerPackage(),
       new ImagePickerPackage(),
+      new KCKeepAwakePackage(),
+      new RNLocalizePackage(),
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),
       new RNSharePackage(),
       new SplashScreenReactPackage(),
-      new VectorIconsPackage()
+      new SystemSettingPackage(),
+      new VectorIconsPackage(),
+      new RNCWebViewPackage()
     ));
   }
 }

@@ -68,7 +68,6 @@ const styles = StyleSheet.create({
         fontFamily: Font.Medium,
         fontSize: height_screen * 0.022,
         color: Color.White,
-        marginTop: height_screen * 0.003
     },
 
 })

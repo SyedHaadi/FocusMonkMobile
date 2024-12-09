@@ -36,8 +36,11 @@ const styles = StyleSheet.create({
         fontSize: height_screen * 0.015
     },
     forgotView: {
-        marginBottom: height_screen * 0.012,
-        marginTop: height_screen * 0.07
+        marginBottom: height_screen * 0.015,
+        marginTop: height_screen * 0.09
+    },
+    accView: {
+        marginVertical: height_screen * 0.01,
     },
     forgotText: {
         fontFamily: Font.Regular,
@@ -97,7 +100,27 @@ const styles = StyleSheet.create({
         fontFamily: Font.Regular,
         fontSize: height_screen * 0.018,
         color: Color.PrimaryColor
-    }
+    },
+    dropdown: {
+        width: width_screen * 0.34,
+        marginTop: height_screen * 0.01,
+    },
+    placeholderStyle: {
+        fontSize: 14,
+    },
+    selectedTextStyle: {
+        fontSize: height_screen * 0.018,
+        fontFamily: Font.Medium,
+        textAlign: 'right'
+    },
+    iconStyle: {
+        width: 25,
+        height: 25,
+    },
+    inputSearchStyle: {
+        height: 40,
+        fontSize: 14,
+    },
 });
 
 export default styles;

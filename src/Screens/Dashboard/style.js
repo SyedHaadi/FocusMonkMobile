@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     },
     profileView: {
         width: '100%',
-        marginTop: height_screen * 0.03,
+        marginTop: height_screen * 0.014,
         flexDirection: 'row',
         alignItems: 'center'
     },
@@ -96,19 +96,19 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
-        marginTop: height_screen * 0.025,
-        marginBottom: height_screen * 0.025
+        marginTop: height_screen * 0.015,
+        marginBottom: height_screen * 0.015
     },
     rView: {
         backgroundColor: Color.PrimaryColor,
-        paddingHorizontal: width_screen * 0.017,
+        paddingHorizontal: width_screen * 0.007,
         paddingVertical: height_screen * 0.002,
-        borderRadius: height_screen * 0.008,
+        borderRadius: height_screen * 0.005,
 
     },
     rankText: {
         fontFamily: Font.Medium,
-        fontSize: height_screen * 0.016,
+        fontSize: height_screen * 0.0135,
         color: Color.Grey,
         marginTop: height_screen * 0.002
 
@@ -117,13 +117,13 @@ const styles = StyleSheet.create({
         fontFamily: Font.Medium,
         fontSize: height_screen * 0.014,
         color: Color.Grey,
-        marginTop: height_screen * 0.0035
+        marginTop: height_screen * 0.002
     },
     trophyView: {
         backgroundColor: Color.Pink,
-        paddingHorizontal: width_screen * 0.017,
+        paddingHorizontal: width_screen * 0.007,
         paddingVertical: height_screen * 0.002,
-        borderRadius: height_screen * 0.008,
+        borderRadius: height_screen * 0.005,
         flexDirection: 'row',
         alignItems: 'center'
 
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
         marginTop: height_screen * 0.002
     },
     coinsView: {
-        position:'relative',
+        position: 'relative',
         width: '100%',
         borderRadius: height_screen * 0.015,
         paddingHorizontal: '5%',
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
         backgroundColor: Color.White,
         borderColor: Color.PrimaryColor,
         borderTopWidth: 2.5,
-        marginBottom: height_screen * 0.02,
+        marginBottom: height_screen * 0.01,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -165,10 +165,10 @@ const styles = StyleSheet.create({
         fontFamily: Font.Medium,
         fontSize: height_screen * 0.016,
         color: Color.Grey,
-        alignSelf: 'flex-end'
+        // alignSelf: 'flex-end'
     },
     lineView: {
-        position:'relative',
+        position: 'relative',
         height: height_screen * 0.012,
         width: '100%',
         borderRadius: height_screen * 0.01,
@@ -183,13 +183,21 @@ const styles = StyleSheet.create({
 
         elevation: 2,
     },
+    flagView: {
+        height: 40,
+        width: 40,
+        zIndex: 10,
+        resizeMode: 'stretch',
+    },
     coinImgView: {
         position: 'absolute',
         resizeMode: 'contain',
+        height: height_screen * 0.035,
+        width: height_screen * 0.035,
         zIndex: 1,
-        top: -height_screen * 0.019,
-        left: -height_screen * 0.022,
-        transform:'translate(-0px , -0px)',
+        top: -height_screen * 0.012,
+        marginLeft: -10,
+        transform: 'translate(-0px , -0px)',
     },
     totalCoinsView: {
         marginTop: height_screen * 0.035,
@@ -266,6 +274,62 @@ const styles = StyleSheet.create({
         height: height_screen * 0.025,
         width: width_screen * 0.04,
         resizeMode: 'contain',
+    },
+    centeredView: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)'
+    },
+    modalView: {
+        height: height_screen * 0.48,
+        width: width_screen * 0.92,
+        backgroundColor: Color.White,
+        alignItems: 'center',
+        borderRadius: 20,
+        paddingVertical: height_screen * 0.03,
+        paddingHorizontal: width_screen * 0.05,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
+    },
+    timerView: {
+        width: width_screen * 0.13,
+        height: height_screen * 0.048,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 5,
+        backgroundColor: Color.White,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
+    },
+    timerText: {
+        fontFamily: Font.Medium,
+        fontSize: height_screen * 0.017,
+    },
+    timerTitle: {
+        fontFamily: Font.Regular,
+        fontSize: height_screen * 0.012,
+        color: Color.PrimaryColor,
+        textTransform: 'uppercase'
+    },
+    currText: {
+        fontFamily: Font.Medium,
+        fontSize: height_screen * 0.017,
+        color: Color.Grey
     }
 })
 

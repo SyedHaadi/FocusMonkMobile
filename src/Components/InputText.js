@@ -9,7 +9,7 @@ const InputText = (props) => {
         <View style={styles.inputView}>
             <Icon name={props.icon} size={height_screen * 0.026} color={Color.Grey} />
             <TextInput
-                style={{ marginLeft: width_screen * 0.02, width: '75%', height: height_screen * 0.06 }}
+                style={{ marginLeft: width_screen * 0.02, width: '80%', height: height_screen * 0.06, fontSize: height_screen * 0.016 }}
                 onChangeText={props.onChangeText}
                 value={props.value}
                 placeholder={props.placeholder}
@@ -18,7 +18,7 @@ const InputText = (props) => {
             />
             {
                 props.passwordField ?
-                    <TouchableOpacity onPress={props.onPress} style={{ marginLeft: height_screen * 0.02 }} >
+                    <TouchableOpacity onPress={props.onPress} style={{ marginLeft: height_screen * 0.01 }} >
                         <Icon name={props.showPassword ? 'eye' : 'eye-slash'} size={height_screen * 0.025} color={Color.Grey} />
                     </TouchableOpacity>
                     :
@@ -26,7 +26,7 @@ const InputText = (props) => {
             }
             {
                 props.passwordField2 ?
-                    <TouchableOpacity onPress={props.onPress} style={{ marginLeft: height_screen * 0.02 }} >
+                    <TouchableOpacity onPress={props.onPress} style={{ marginLeft: height_screen * 0.01 }} >
                         <Icon name={props.showPassword ? 'eye' : 'eye-slash'} size={height_screen * 0.025} color={Color.Grey} />
                     </TouchableOpacity>
                     :
@@ -39,7 +39,7 @@ const InputText = (props) => {
 const styles = StyleSheet.create({
     inputView: {
         height: height_screen * 0.06,
-        width: '80%',
+        width: '82%',
         marginHorizontal: '10%',
         borderRadius: height_screen * 0.1,
         borderWidth: 0.1,

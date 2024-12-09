@@ -6,6 +6,8 @@ import 'react-native-gesture-handler';
 import { Alert, AppRegistry, NativeEventEmitter, NativeModules, DeviceEventEmitter, Platform } from 'react-native';
 import App from './App';
 import { name as appName } from './app.json';
+import { getLocalStorage, setLocalStorage, removeLocalStorage } from './src/shared/functions';
+import { STORAGE_KEYS } from './src/shared/constants';
 
 // import { setApps } from './src/redux/Apps/AppsAction';
 // DeviceEventEmitter.addListener('myEventName', (actionName) => {
@@ -19,6 +21,9 @@ import { name as appName } from './app.json';
 //   }
 // });
 
+const d = new Date();
+setLocalStorage(STORAGE_KEYS.Counter, JSON.stringify(false));
+setLocalStorage(STORAGE_KEYS.Counter_Date, JSON.stringify(d));
 
 if (Platform.OS === 'android') {
   const MyModule = NativeModules.MyModule;

@@ -1,0 +1,202 @@
+[
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-mdpi_src_assets_icons_en.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-mdpi/src_assets_icons_en.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.focusmonk.app-main-40:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-hdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-hdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-mdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-mdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.focusmonk.app-main-40:/mipmap-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/layout_launch_screen.xml.flat",
+        "source": "com.focusmonk.app-main-40:/layout/launch_screen.xml"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "com.focusmonk.app-main-40:/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-xxhdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-xxhdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable_splashscreen.png.flat",
+        "source": "com.focusmonk.app-main-40:/drawable/splashscreen.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.focusmonk.app-main-40:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-mdpi_node_modules_reactnativeelementdropdown_src_assets_down.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-mdpi/node_modules_reactnativeelementdropdown_src_assets_down.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.focusmonk.app-main-40:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-mdpi_src_assets_icons_background.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-mdpi/src_assets_icons_background.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.focusmonk.app-main-40:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-mdpi_src_assets_icons_lock.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-mdpi/src_assets_icons_lock.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-mdpi_src_assets_icons_cn.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-mdpi/src_assets_icons_cn.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable_rn_edit_text_material.xml.flat",
+        "source": "com.focusmonk.app-main-40:/drawable/rn_edit_text_material.xml"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-mdpi_src_assets_icons_clock3.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-mdpi/src_assets_icons_clock3.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-xhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-xhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.focusmonk.app-main-40:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.focusmonk.app-main-40:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.focusmonk.app-main-40:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-mdpi_src_assets_icons_coin.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-mdpi/src_assets_icons_coin.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-xxxhdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-xxxhdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-mdpi_src_assets_icons_environment.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-mdpi/src_assets_icons_environment.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-mdpi_src_assets_icons_pr.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-mdpi/src_assets_icons_pr.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-mdpi_src_assets_icons_profile.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-mdpi/src_assets_icons_profile.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.focusmonk.app-main-40:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-xhdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-xhdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.focusmonk.app-main-40:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.focusmonk.app-main-40:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.focusmonk.app-main-40:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-xxxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-xxxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-mdpi_src_assets_icons_sp.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-mdpi/src_assets_icons_sp.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-xxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-xxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-mdpi_src_assets_icons_icon.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-mdpi/src_assets_icons_icon.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-mdpi_src_assets_icons_clock2.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-mdpi/src_assets_icons_clock2.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-mdpi_src_assets_icons_calender.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-mdpi/src_assets_icons_calender.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-mdpi_src_assets_icons_schedule.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-mdpi/src_assets_icons_schedule.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.focusmonk.app-main-40:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-mdpi_src_assets_icons_logout.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-mdpi/src_assets_icons_logout.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.focusmonk.app-main-40:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-mdpi_node_modules_reactnativeelementdropdown_src_assets_close.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-mdpi/node_modules_reactnativeelementdropdown_src_assets_close.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-mdpi_src_assets_icons_achievements.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-mdpi/src_assets_icons_achievements.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.focusmonk.app-main-40:/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-hdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-hdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.focusmonk.app-main-40:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backiconmask.png.flat",
+        "source": "com.focusmonk.app-react-34:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backiconmask.png"
+    },
+    {
+        "merged": "com.focusmonk.app-merged_res-39:/xml_accessibility_service_config.xml.flat",
+        "source": "com.focusmonk.app-main-40:/xml/accessibility_service_config.xml"
+    }
+]

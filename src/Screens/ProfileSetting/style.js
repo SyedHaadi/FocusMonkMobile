@@ -122,6 +122,45 @@ const styles = StyleSheet.create({
         color: Color.White,
         marginTop: height_screen * 0.002
     },
+
+    modalBackground: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    },
+    modalContainer: {
+        width: 300,
+        backgroundColor: 'white',
+        borderRadius: 10,
+        padding: 20,
+        alignItems: 'center',
+    },
+    modalTitle: {
+        fontSize: height_screen * 0.022,
+        alignSelf: 'flex-start',
+        fontFamily: Font.Bold,
+        marginBottom: height_screen * 0.005,
+    },
+    modalDescription: {
+        fontSize: height_screen * 0.016,
+        alignSelf: 'flex-start',
+        fontFamily: Font.Regular,
+        marginBottom: height_screen * 0.02,
+    },
+    okButton: {
+        backgroundColor: Color.PrimaryColor,
+        padding: 10,
+        borderRadius: 5,
+        width: width_screen * 0.14,
+        alignSelf: 'flex-end',
+        alignItems: 'center',
+    },
+    buttonText: {
+        fontSize: height_screen * 0.016,
+        color: Color.White,
+        fontFamily: Font.Regular,
+    }
 })
 
 export default styles;

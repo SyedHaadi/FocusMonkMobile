@@ -6,8 +6,10 @@ import {
     PermissionsAndroid,
     SafeAreaView,
     ScrollView,
+    Pressable,
     StatusBar,
     ToastAndroid,
+    Modal,
     StyleSheet,
     Text,
     TouchableOpacity,
@@ -20,7 +22,6 @@ import styles from './style';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { height_screen, width_screen } from '../../Utils/Dimentions';
 import Color from '../../Utils/Color';
-import ImagePicker from 'react-native-image-picker';
 import {
     launchCamera,
     launchImageLibrary
@@ -40,6 +41,7 @@ import Loader from '../../Components/Loader';
 const ProfileSetting = ({ navigation }) => {
 
 
+    const languageData = useSelector((state) => state?.language?.language_data);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [position, setPosition] = useState('');
@@ -53,6 +55,7 @@ const ProfileSetting = ({ navigation }) => {
     const user = useSelector((state) => state.userData.user);
     const loading = useSelector((state) => state?.appLoading?.loading);
     const [load, setLoad] = useState(true);
+    const [modalVisible, setModalVisible] = useState(false);
 
     //Getting User Data ....... 
 
@@ -69,6 +72,7 @@ const ProfileSetting = ({ navigation }) => {
     useEffect(() => {
 
         const unsubscribe = navigation.addListener('focus', () => {
+            setIsImgUpdate(false);
             dispatch(getUserData());
         });
         return () => {
@@ -77,7 +81,7 @@ const ProfileSetting = ({ navigation }) => {
     }, [navigation])
 
     useEffect(() => {
-
+        console.log("Image .......", user?.image)
         setFirstName(user?.first_name);
         setLastName(user?.last_name);
         setEmail(user?.email);
@@ -111,6 +115,10 @@ const ProfileSetting = ({ navigation }) => {
     };
     const requestExternalWritePermission = async () => {
         if (Platform.OS === 'android') {
+            if (Number(Platform.Version) >= 33) {
+                return true;
+            }
+
             try {
                 const granted = await PermissionsAndroid.request(
                     PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
@@ -141,21 +149,21 @@ const ProfileSetting = ({ navigation }) => {
         let isStoragePermitted = await requestExternalWritePermission();
         if (isCameraPermitted && isStoragePermitted) {
             launchCamera(options, (response) => {
-                // console.log('Response = ', response);
+                console.log('Response = ', response);
 
                 if (response.didCancel) {
                     if (Platform.OS === 'android') {
-                        ToastAndroid.show('You cancelled Image picker !', ToastAndroid.SHORT);
+                        ToastAndroid.show(languageData?.imageNotSelected, ToastAndroid.SHORT);
                     }
                     else {
-                        alert('You cancelled Image picker');
+                        // alert(languageData?.IMAGE_PICKER_CANCELLED);
                     }
                     return;
                 } else if (response.errorCode == 'camera_unavailable') {
-                    alert('Camera not available on device');
+                    alert(languageData?.CAMERA_NOT_AVAILABLE);
                     return;
                 } else if (response.errorCode == 'permission') {
-                    alert('Permission not satisfied');
+                    alert(languageData?.PERMISSION_NOT_SATISFIED);
                     return;
                 } else if (response.errorCode == 'others') {
                     alert(response.errorMessage);
@@ -181,17 +189,17 @@ const ProfileSetting = ({ navigation }) => {
 
             if (response.didCancel) {
                 if (Platform.OS === 'android') {
-                    ToastAndroid.show('You cancelled Image picker !', ToastAndroid.SHORT);
+                    ToastAndroid.show(languageData?.imageNotSelected, ToastAndroid.SHORT);
                 }
                 else {
-                    alert('You cancelled Image picker');
+                    // alert(languageData?.IMAGE_PICKER_CANCELLED);
                 }
                 return;
             } else if (response.errorCode == 'camera_unavailable') {
-                alert('Camera not available on device');
+                alert(languageData?.CAMERA_NOT_AVAILABLE);
                 return;
             } else if (response.errorCode == 'permission') {
-                alert('Permission not satisfied');
+                alert(languageData?.PERMISSION_NOT_SATISFIED);
                 return;
             } else if (response.errorCode == 'others') {
                 alert(response.errorMessage);
@@ -205,35 +213,39 @@ const ProfileSetting = ({ navigation }) => {
     };
 
     const onSubmit = async () => {
-
         setLoad(false);
         let imgPath;
+
+        if (firstName === '' || lastName === '' || number === '' || position === '') {
+            ToastAndroid.show('Please fill all the fields !', ToastAndroid.LONG);
+            return;
+        }
 
         if (firstName === '') {
             Toast.show({
                 type: 'error',
-                text1: 'Please enter the first name !',
+                text1: languageData?.firstName,
             });
             return;
         }
         if (lastName === '') {
             Toast.show({
                 type: 'error',
-                text1: 'Please enter the last name !',
+                text1: languageData?.lastName,
             });
             return;
         }
         if (number === '') {
             Toast.show({
                 type: 'error',
-                text1: 'Please enter the phone number !',
+                text1: languageData?.phoneNumber,
             });
             return;
         }
         if (position === '') {
             Toast.show({
                 type: 'error',
-                text1: 'Please enter the position !',
+                text1: languageData?.enter_position,
             });
             return;
         }
@@ -312,28 +324,63 @@ const ProfileSetting = ({ navigation }) => {
         if (isImgUpdate) {
             data = { ...data, "image": imgPath }
         }
+        // console.log("User Data ...", isImgUpdate, data)
 
-        dispatch(updateUserData(data));
+
+        const res = await dispatch(updateUserData(data));
+
+        if (res) {
+            setModalVisible(true);
+        }
     }
+
+    const closeAlert = () => {
+        setModalVisible(false);
+        // navigation.navigate('DashBoard')
+    };
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <Toast position='top' />
+
             {
-                loading && load ?
+                loading && load && !user ?
                     <Loader />
                     :
                     null
             }
+
+            {/* <View style={{ zIndex: 1 }}>
+                <Toast position='top' />
+            </View> */}
 
             <Header title='Profile Setting' navigation={navigation} />
 
             <ScrollView showsVerticalScrollIndicator={false} style={{ marginVertical: height_screen * 0.01 }}>
                 <View style={styles.bodyView} >
 
+                    <Modal
+                        animationType="slide"
+                        transparent={true}
+                        visible={modalVisible}
+                        onRequestClose={closeAlert}
+                    >
+                        <View style={styles.modalBackground}>
+                            <View style={styles.modalContainer}>
+                                <Text style={styles.modalTitle}>Success!</Text>
+                                <Text style={styles.modalDescription}>
+                                    Your profile has been updated successfully.
+                                </Text>
+
+                                <Pressable style={styles.okButton} onPress={closeAlert}>
+                                    <Text style={styles.buttonText}>OK</Text>
+                                </Pressable>
+                            </View>
+                        </View>
+                    </Modal>
+
                     <View style={styles.profileMainView}>
                         <View style={styles.profileView}>
-                            <Text style={styles.proText}>Set Profile Image</Text>
+                            <Text style={styles.proText}>{languageData?.set_profile_image}</Text>
                             {/* <TouchableOpacity style={styles.delView}>
                                 <Text style={styles.delText}>Remove Image</Text>
                                 <Icon name='trash' size={height_screen * 0.016} color={Color.White} />
@@ -347,10 +394,10 @@ const ProfileSetting = ({ navigation }) => {
                             </View>
                             <View>
                                 <TouchableOpacity style={styles.takeView} onPress={() => captureImage('photo')}>
-                                    <Text style={styles.takeText}>Take Photo</Text>
+                                    <Text style={styles.takeText}>{languageData?.take_photo}</Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity style={styles.SelectView} onPress={() => chooseFile('photo')}>
-                                    <Text style={styles.SelectText}>Select from gallery</Text>
+                                    <Text style={styles.SelectText}>{languageData?.select_from_gallery}</Text>
                                 </TouchableOpacity>
                             </View>
                         </View>
@@ -362,20 +409,20 @@ const ProfileSetting = ({ navigation }) => {
                             <EditInput
                                 onChangeText={(firstName) => setFirstName(firstName)}
                                 value={firstName}
-                                placeholder='Enter First name'
+                                placeholder={languageData?.enter_first_name}
                                 placeholderTextColor={Color.LightGrey}
                                 width='45'
-                                title='First Name'
+                                title={languageData?.first_name}
                                 editable={true}
                             // onPress={() => setShowPassword(!showPassword)}
                             />
                             <EditInput
                                 onChangeText={(lastName) => setLastName(lastName)}
                                 value={lastName}
-                                placeholder='Enter Last name'
+                                placeholder={languageData?.enter_last_name}
                                 placeholderTextColor={Color.LightGrey}
                                 width='45'
-                                title='Last Name'
+                                title={languageData?.last_name}
                                 editable={true}
                             // onPress={() => setShowPassword(!showPassword)}
                             />
@@ -384,37 +431,38 @@ const ProfileSetting = ({ navigation }) => {
                         <EditInput
                             onChangeText={(position) => setPosition(position)}
                             value={position}
-                            placeholder='Enter your Position'
+                            placeholder={languageData?.enter_designation}
                             placeholderTextColor={Color.LightGrey}
                             width='95'
-                            title='Position'
+                            title={languageData?.position}
                             editable={true}
                         // onPress={() => setShowPassword(!showPassword)}
                         />
                         <EditInput
                             onChangeText={(number) => setNumber(number)}
                             value={number}
-                            placeholder='Enter your Number'
+                            placeholder={languageData?.enter_phone_number}
                             placeholderTextColor={Color.LightGrey}
                             width='95'
-                            title='Phone Number'
+                            title={languageData?.phone_number}
                             editable={true}
                             keyBoardType='number-pad'
+                            maxDigits={15}
                         // onPress={() => setShowPassword(!showPassword)}
                         />
                         <EditInput
                             onChangeText={(email) => setEmail(email)}
                             value={email}
-                            placeholder='Enter your Email'
+                            placeholder={languageData?.enter_email}
                             placeholderTextColor={Color.LightGrey}
                             width='95'
-                            title='Email'
+                            title={languageData?.email}
                             editable={false}
                         // onPress={() => setShowPassword(!showPassword)}
                         />
 
                         <TouchableOpacity disabled={loading} style={styles.BtnView} onPress={() => onSubmit()}>
-                            <Text style={styles.BtnText}>Submit</Text>
+                            <Text style={styles.BtnText}>{languageData?.submit}</Text>
                             {
                                 loading ?
                                     <ActivityIndicator size={17} color={Color.White} style={{ position: 'absolute', right: 7 }} />

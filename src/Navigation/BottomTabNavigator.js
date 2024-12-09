@@ -23,10 +23,12 @@ import Environment from '../Screens/Environment/Environment';
 import Schedule from '../Screens/Schedule/Schedule';
 import Color from '../Utils/Color';
 import { height_screen, width_screen } from '../Utils/Dimentions';
+import { useSelector } from 'react-redux';
 
 
 
 const generateScreen = screen => () => {
+
   return (
     <View
       style={{
@@ -48,6 +50,9 @@ const tabBarIcon =
 const Tab = createBottomTabNavigator();
 
 const TabBar = () => {
+
+  const languageData = useSelector((state) => state?.language?.language_data);
+
   return (
     <Tab.Navigator
       screenOptions={{
@@ -81,22 +86,22 @@ const TabBar = () => {
     >
       <Tab.Screen
         options={{ tabBarIcon: ({ focused }) => (<Ionicons style={{ marginBottom: -height_screen * 0.01 }} name='bar-chart' size={height_screen * 0.03} color={focused ? Color.PrimaryColor : Color.Grey} />), tabBarShowLabel: true }}
-        name="Performance"
+        name={languageData?.performance ? languageData?.performance : 'Performance'}
         component={Dashboard}
       />
       <Tab.Screen
         options={{ tabBarIcon: ({ focused }) => (<Ionicons style={{ marginBottom: -height_screen * 0.01 }} name='wallet' size={height_screen * 0.03} color={focused ? Color.PrimaryColor : Color.Grey} />), tabBarShowLabel: true }}
-        name="Wallet"
+        name={languageData?.wallet ? languageData?.wallet : 'Wallet'}
         component={Wallet}
       />
       <Tab.Screen
-        options={{ tabBarIcon: ({ focused }) => (<Image style={{ width: height_screen * 0.04, height: height_screen * 0.022, marginBottom: -height_screen * 0.01, tintColor: focused ? Color.PrimaryColor : Color.Grey }} source={require('../Assets/icons/environment.png')} resizeMode='contain' />), tabBarShowLabel: true }}
-        name="Apps"
+        options={{ tabBarIcon: ({ focused }) => (<Ionicons style={{ marginBottom: -height_screen * 0.01 }} name='grid' size={height_screen * 0.027} color={focused ? Color.PrimaryColor : Color.Grey} />), tabBarShowLabel: true }}
+        name={languageData?.apps ? languageData?.apps : 'Apps'}
         component={Environment}
       />
       <Tab.Screen
-        options={{ tabBarIcon: ({ focused }) => (<Ionicons style={{ marginBottom: -height_screen * 0.01 }} name='time-outline' size={height_screen * 0.029} color={focused ? Color.PrimaryColor : Color.Grey} />), tabBarShowLabel: true }}
-        name="Schedule"
+        options={{ tabBarIcon: ({ focused }) => (<Ionicons style={{ marginBottom: -height_screen * 0.01 }} name='time' size={height_screen * 0.029} color={focused ? Color.PrimaryColor : Color.Grey} />), tabBarShowLabel: true }}
+        name={languageData?.schedule ? languageData?.schedule : 'Schedule'}
         component={Schedule}
       />
     </Tab.Navigator>

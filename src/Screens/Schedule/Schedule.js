@@ -34,6 +34,8 @@ const Schedule = ({ navigation }) => {
     const schedule = useSelector((state) => state.schedule.schedule);
     const loading = useSelector((state) => state?.appLoading?.loading);
     const [day, setDay] = useState('');
+    const languageData = useSelector((state) => state?.language?.language_data);
+
 
 
     useEffect(() => {
@@ -52,34 +54,41 @@ const Schedule = ({ navigation }) => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
             {
-                loading ?
+                loading && !schedule ?
                     <Loader />
                     :
                     null
             }
 
-            <Header title='Focus Schedule' navigation={navigation} />
+            <View style={{ flex: 1 }}>
+                <View style={{ zIndex: 1 }}>
+                    <Toast position='top' />
+                </View>
 
-            <View style={styles.bodyView} >
+                <Header title={languageData?.focus_schedule_title} navigation={navigation} />
 
-                <ScrollView style={styles.dutyView} showsVerticalScrollIndicator={false} >
-                    <Text style={styles.dutyText}>Duty Time:</Text>
+                <View style={styles.bodyView} >
 
-                    <View>
-                        <View style={styles.dutyHeaderView}>
+                    <ScrollView style={styles.dutyView} showsVerticalScrollIndicator={false} >
+                        <Text style={styles.dutyText}>{languageData?.duty_time}:</Text>
 
-                            <View style={styles.dayView}>
-                                <Icon name='calendar' size={height_screen * 0.028} Color='grey' color={Color.PrimaryColor} style={{ marginRight: 5 }} />
-                                <Text style={styles.dayText}>Days</Text>
-                            </View>
-                            <View style={styles.dayView}>
-                                <Icon name='clock' size={height_screen * 0.028} Color='grey' color={Color.PrimaryColor} style={{ marginRight: 5 }} />
-                                <Text style={styles.dayText}>Time</Text>
-                            </View>
+                        {
+                            schedule?.length != 0 ?
+                                <View>
+                                    <View style={styles.dutyHeaderView}>
 
-                        </View>
+                                        <View style={styles.dayView}>
+                                            <Icon name='calendar' size={height_screen * 0.024} Color='grey' color={Color.PrimaryColor} style={{ marginRight: 5 }} />
+                                            <Text style={styles.dayText}>{languageData?.days}</Text>
+                                        </View>
+                                        <View style={styles.dayView}>
+                                            <Icon name='clock' size={height_screen * 0.024} Color='grey' color={Color.PrimaryColor} style={{ marginRight: 5 }} />
+                                            <Text style={styles.dayText}>{languageData?.time}</Text>
+                                        </View>
 
-                        {/* <View style={styles.dutyBodyView}>
+                                    </View>
+
+                                    {/* <View style={styles.dutyBodyView}>
                             <View>
                                 <Text style={styles.bodyText}>Monday</Text>
                             </View>
@@ -88,103 +97,107 @@ const Schedule = ({ navigation }) => {
                             </View>
                         </View> */}
 
-                        {
-                            schedule?.map((value, index) => {
-                                return (
-                                    value?.status === true ?
-                                        <View key={index} style={styles.dutyBodyView}>
-                                            <View>
-                                                <Text style={[styles.bodyText, { fontFamily: (value?.days) == day ? Font.Bold : Font.Regular }]}>{value?.days}</Text>
+                                    {
+                                        schedule?.map((value, index) => {
+                                            return (
+                                                value?.status === true ?
+                                                    <View key={index} style={styles.dutyBodyView}>
+                                                        <View>
+                                                            <Text style={[styles.bodyText, { fontFamily: (value?.days) == day ? Font.Bold : Font.Regular }]}>{value?.days}</Text>
+                                                        </View>
+                                                        <View>
+                                                            <Text style={[styles.bodyText, { fontFamily: (value?.days) == day ? Font.Bold : Font.Regular }]}>{moment(value?.start_time).format("hh:mm A")} - {moment(value?.end_time).format("hh:mm A")} </Text>
+                                                        </View>
+                                                    </View>
+                                                    :
+                                                    null
+                                            )
+                                        })
+                                    }
+
+                                    <View style={styles.centerLine}></View>
+                                    <View>
+                                        <Text style={styles.dutyText}>{languageData?.break_time}:</Text>
+
+                                        <View>
+                                            <View style={styles.dutyHeaderView}>
+
+                                                <View style={styles.dayView}>
+                                                    <Icon name='calendar' size={height_screen * 0.024} Color='grey' color={Color.PrimaryColor} style={{ marginRight: 5 }} />
+                                                    <Text style={styles.dayText}>{languageData?.days}</Text>
+                                                </View>
+                                                <View style={styles.dayView}>
+                                                    <Icon name='clock' size={height_screen * 0.024} Color='grey' color={Color.PrimaryColor} style={{ marginRight: 5 }} />
+                                                    <Text style={styles.dayText}>{languageData?.time}</Text>
+                                                </View>
+
                                             </View>
-                                            <View>
-                                                <Text style={[styles.bodyText, { fontFamily: (value?.days) == day ? Font.Bold : Font.Regular }]}>{moment(value?.start_time).format("hh:mm A")} - {moment(value?.end_time).format("hh:mm A")} </Text>
-                                            </View>
+
+                                            {
+                                                schedule?.map((value, index) => {
+                                                    return (
+                                                        value.status === true ?
+                                                            <View key={index} style={styles.dutyBodyView}>
+                                                                <View>
+                                                                    <Text style={[styles.bodyText, { fontFamily: (value?.days) == day ? Font.Bold : Font.Regular }]}>{value.days}</Text>
+                                                                </View>
+                                                                <View>
+                                                                    <Text style={[styles.bodyText, { fontFamily: (value?.days) == day ? Font.Bold : Font.Regular }]}>{moment(value?.break_timestart).format("hh:mm A")} - {moment(value?.break_timeend).format("hh:mm A")} </Text>
+                                                                </View>
+                                                            </View>
+                                                            :
+                                                            null
+                                                    )
+                                                })
+                                            }
+
                                         </View>
-                                        :
-                                        null
-                                )
-                            })
+                                    </View>
+
+                                    <View style={styles.centerLine}></View>
+
+                                    <View>
+                                        <Text style={styles.dutyText}>{languageData?.schedule_holiday}:</Text>
+
+                                        <View>
+                                            <View style={styles.dutyHeaderView}>
+
+                                                <View style={styles.dayView}>
+                                                    <Icon name='calendar' size={height_screen * 0.024} Color='grey' color={Color.PrimaryColor} style={{ marginRight: 5 }} />
+                                                    <Text style={styles.dayText}>{languageData?.days}</Text>
+                                                </View>
+
+                                            </View>
+
+                                            {
+                                                schedule?.map((value, index) => {
+                                                    return (
+                                                        value.status === false ?
+                                                            <View key={index} style={styles.dutyBodyView}>
+                                                                <View>
+                                                                    <Text style={[styles.bodyText, { fontFamily: (value?.days) == day ? Font.Bold : Font.Regular }]}>{value.days}</Text>
+                                                                </View>
+                                                                <View>
+                                                                    <Text style={[styles.bodyText, { fontFamily: (value?.days) == day ? Font.Bold : Font.Regular }]}>{languageData?.schedule_holiday}</Text>
+                                                                </View>
+                                                            </View>
+                                                            :
+                                                            null
+                                                    )
+                                                })
+                                            }
+
+                                        </View>
+                                    </View>
+
+                                </View>
+                                :
+                                <Text style={[styles.bodyText, { fontFamily: Font.Bold, alignSelf: 'center', marginTop: height_screen * 0.05 }]}>Schedule is not added yet!</Text>
                         }
-
-                        <View style={styles.centerLine}></View>
-                        <View>
-                            <Text style={styles.dutyText}>Break Time:</Text>
-
-                            <View>
-                                <View style={styles.dutyHeaderView}>
-
-                                    <View style={styles.dayView}>
-                                        <Icon name='calendar' size={height_screen * 0.028} Color='grey' color={Color.PrimaryColor} style={{ marginRight: 5 }} />
-                                        <Text style={styles.dayText}>Days</Text>
-                                    </View>
-                                    <View style={styles.dayView}>
-                                        <Icon name='clock' size={height_screen * 0.028} Color='grey' color={Color.PrimaryColor} style={{ marginRight: 5 }} />
-                                        <Text style={styles.dayText}>Time</Text>
-                                    </View>
-
-                                </View>
-
-                                {
-                                    schedule?.map((value, index) => {
-                                        return (
-                                            value.status === true ?
-                                                <View key={index} style={styles.dutyBodyView}>
-                                                    <View>
-                                                        <Text style={[styles.bodyText, { fontFamily: (value?.days) == day ? Font.Bold : Font.Regular }]}>{value.days}</Text>
-                                                    </View>
-                                                    <View>
-                                                        <Text style={[styles.bodyText, { fontFamily: (value?.days) == day ? Font.Bold : Font.Regular }]}>{moment(value?.break_timestart).format("hh:mm A")} - {moment(value?.break_timeend).format("hh:mm A")} </Text>
-                                                    </View>
-                                                </View>
-                                                :
-                                                null
-                                        )
-                                    })
-                                }
-
-                            </View>
-                        </View>
-
-                        <View style={styles.centerLine}></View>
-
-                        <View>
-                            <Text style={styles.dutyText}>Holidays:</Text>
-
-                            <View>
-                                <View style={styles.dutyHeaderView}>
-
-                                    <View style={styles.dayView}>
-                                        <Icon name='calendar' size={height_screen * 0.028} Color='grey' color={Color.PrimaryColor} style={{ marginRight: 5 }} />
-                                        <Text style={styles.dayText}>Days</Text>
-                                    </View>
-
-                                </View>
-
-                                {
-                                    schedule?.map((value, index) => {
-                                        return (
-                                            value.status === false ?
-                                                <View key={index} style={styles.dutyBodyView}>
-                                                    <View>
-                                                        <Text style={[styles.bodyText, { fontFamily: (value?.days) == day ? Font.Bold : Font.Regular }]}>{value.days}</Text>
-                                                    </View>
-                                                    <View>
-                                                        <Text style={[styles.bodyText, { fontFamily: (value?.days) == day ? Font.Bold : Font.Regular }]}>Holiday</Text>
-                                                    </View>
-                                                </View>
-                                                :
-                                                null
-                                        )
-                                    })
-                                }
-
-                            </View>
-                        </View>
-
-                    </View>
-                </ScrollView>
+                    </ScrollView>
 
 
+                </View>
             </View>
 
 

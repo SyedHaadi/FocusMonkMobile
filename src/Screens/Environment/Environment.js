@@ -39,6 +39,8 @@ const Environment = ({ navigation }) => {
     const environment = useSelector((state) => state.apps.environment);
     const loading = useSelector((state) => state?.appLoading?.loading);
     const [showApps, setShowApps] = useState(true);
+    const languageData = useSelector((state) => state?.language?.language_data);
+
 
     useEffect(() => {
 
@@ -61,75 +63,93 @@ const Environment = ({ navigation }) => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
             {
-                loading ?
+                loading && !environment ?
                     <Loader />
                     :
                     null
             }
+            <View style={{ flex: 1 }}>
 
-            <Header title='Apps Control' navigation={navigation} />
+                <View style={{ zIndex: 1 }}>
+                    <Toast position='top' />
+                </View>
 
-            <View style={styles.bodyView} >
+                <Header title={languageData?.apps_control_title} navigation={navigation} />
 
-                <View style={styles.coinsView} >
-                    <View style={styles.blockMainView}>
-                        <Text style={styles.envText}>Mode :</Text>
-                        <View style={styles.blockView}>
-                            <Text style={styles.blockText}>{environment}</Text>
+                <View style={styles.bodyView} >
+
+                    <View style={styles.coinsView} >
+                        <View style={styles.blockMainView}>
+                            <Text style={styles.envText}>{languageData?.mode} :</Text>
+                            <View style={styles.blockView}>
+                                <Text style={styles.blockText}>{environment}</Text>
+                            </View>
                         </View>
                     </View>
+
+                    <View style={styles.tabView}>
+                        <TouchableOpacity onPress={() => setShowApps(true)} style={[styles.tab, { backgroundColor: showApps ? Color.PrimaryColor : Color.LightGrey }]}>
+                            <Text style={[styles.tabText, { color: showApps ? Color.Grey : Color.White, marginTop: height_screen * 0.002 }]}>{languageData?.apps}</Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity onPress={() => setShowApps(false)} style={[styles.tab, { backgroundColor: showApps ? Color.LightGrey : Color.PrimaryColor }]}>
+                            <Text style={[styles.tabText, { color: showApps ? Color.White : Color.Grey, marginTop: height_screen * 0.0025 }]}>{languageData?.urls}</Text>
+                        </TouchableOpacity>
+                    </View>
+
+                    {
+                        showApps ?
+                            <>
+                                <View style={styles.listTitleView}>
+                                    <Text style={styles.titleText1}>{languageData?.focusmonk_apps}</Text>
+                                    <Text style={styles.titleText2}>{languageData?.see_monk_list}</Text>
+                                </View>
+                                {
+                                    apps?.length != 0 ?
+                                        <ScrollView showsVerticalScrollIndicator={false} style={{ marginBottom: height_screen * 0.09 }}>
+                                            {
+                                                apps?.map((value, index) => (
+                                                    <TouchableOpacity onPress={() => onClick(value)} key={index} style={styles.appView}>
+                                                        <Image source={{ uri: value.image }} style={styles.iconView} />
+                                                        <Text style={styles.appText}>{value.name}</Text>
+                                                    </TouchableOpacity>
+                                                ))
+                                            }
+                                        </ScrollView>
+                                        :
+                                        <Text style={[styles.appText, { alignSelf: 'center' }]}>No app added.</Text>
+                                }
+
+                            </>
+                            :
+                            <>
+                                <View style={styles.listTitleView}>
+                                    <Text style={styles.titleText1}>{languageData?.focusmonk_apps}</Text>
+                                    <Text style={styles.titleText2}>{languageData?.see_monk_list}</Text>
+                                </View>
+
+                                {
+                                    urls?.length != 0 ?
+                                        <ScrollView showsVerticalScrollIndicator={false} style={{ marginBottom: height_screen * 0.09 }}>
+                                            {
+                                                urls?.map((value, index) => (
+                                                    <View key={index} style={styles.appView}>
+                                                        {/* <Image source={{ uri: value.image }} style={styles.iconView} /> */}
+                                                        <Text style={styles.appText}>{value}</Text>
+                                                    </View>
+                                                ))
+                                            }
+                                        </ScrollView>
+                                        :
+                                        <Text style={[styles.appText, { alignSelf: 'center' }]}>No url added.</Text>
+                                }
+                            </>
+                    }
+
                 </View>
 
-                <View style={styles.tabView}>
-                    <TouchableOpacity onPress={() => setShowApps(true)} style={[styles.tab, { backgroundColor: showApps ? Color.PrimaryColor : Color.LightGrey }]}>
-                        <Text style={[styles.tabText, { color: showApps ? Color.Grey : Color.White, marginTop: height_screen * 0.002 }]}>Apps</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity onPress={() => setShowApps(false)} style={[styles.tab, { backgroundColor: showApps ? Color.LightGrey : Color.PrimaryColor }]}>
-                        <Text style={[styles.tabText, { color: showApps ? Color.White : Color.Grey, marginTop: height_screen * 0.0025 }]}>Urls</Text>
-                    </TouchableOpacity>
-                </View>
-
-                {
-                    showApps ?
-                        <>
-                            <View style={styles.listTitleView}>
-                                <Text style={styles.titleText1}>Focusmonk Apps</Text>
-                                <Text style={styles.titleText2}>See your monk apps list below</Text>
-                            </View>
-                            <ScrollView showsVerticalScrollIndicator={false} style={{ marginBottom: height_screen * 0.09 }}>
-                                {
-                                    apps?.map((value, index) => (
-                                        <TouchableOpacity onPress={() => onClick(value)} key={index} style={styles.appView}>
-                                            <Image source={{ uri: value.image }} style={styles.iconView} />
-                                            <Text style={styles.appText}>{value.name}</Text>
-                                        </TouchableOpacity>
-                                    ))
-                                }
-                            </ScrollView>
-                        </>
-                        :
-                        <>
-                            <View style={styles.listTitleView}>
-                                <Text style={styles.titleText1}>Focusmonk Urls</Text>
-                                <Text style={styles.titleText2}>See your monk urls list below</Text>
-                            </View>
-                            <ScrollView showsVerticalScrollIndicator={false} style={{ marginBottom: height_screen * 0.09 }}>
-                                {
-                                    urls?.map((value, index) => (
-                                        <View key={index} style={styles.appView}>
-                                            {/* <Image source={{ uri: value.image }} style={styles.iconView} /> */}
-                                            <Text style={styles.appText}>{value}</Text>
-                                        </View>
-                                    ))
-                                }
-                            </ScrollView>
-                        </>
-                }
 
             </View>
-
-
         </SafeAreaView>
     );
 }

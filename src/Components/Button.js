@@ -7,16 +7,19 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Font from '../Utils/Font';
 import { useSelector } from 'react-redux';
 
-const Button = ({ text, onSubmit }) => {
+const Button = ({ size, text, onSubmit }) => {
 
     const loading = useSelector((state) => state?.appLoading?.loading);
 
     return (
         <TouchableOpacity disabled={loading} onPress={onSubmit} style={styles.BtnView}>
-            <Text style={styles.BtnText} >{text}</Text>
+            <Text style={[styles.BtnText, { fontSize: size ? height_screen * size : height_screen * 0.022 }]} >{text}</Text>
             {
                 loading ?
-                    <ActivityIndicator size={17} color={Color.White} style={{ position: 'absolute', right: 20 }} />
+                    !size ?
+                        <ActivityIndicator size={17} color={Color.White} style={{ position: 'absolute', right: 12 }} />
+                        :
+                        null
                     :
                     null
             }
@@ -27,7 +30,7 @@ const Button = ({ text, onSubmit }) => {
 const styles = StyleSheet.create({
     BtnView: {
         height: height_screen * 0.054,
-        width: '50%',
+        width: '52%',
         marginHorizontal: '10%',
         borderRadius: height_screen * 0.1,
         borderWidth: 0.1,
@@ -48,7 +51,6 @@ const styles = StyleSheet.create({
     },
     BtnText: {
         fontFamily: Font.Medium,
-        fontSize: height_screen * 0.022,
         color: Color.White,
         marginTop: height_screen * 0.002
     }

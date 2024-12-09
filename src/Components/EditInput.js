@@ -19,12 +19,13 @@ const EditInput = (props) => {
                     secureTextEntry={props.secureTextEntry}
                     editable={props.editable}
                     keyboardType={props.keyBoardType}
+                    maxLength={props?.maxDigits}
                 />
                 {
                     props.editable ?
                         <View style={styles.iconView}>
                             <Icon name='pen' size={height_screen * 0.016} color={Color.PrimaryColor} />
-                            <Text style={styles.edittext}>Edit</Text>
+                            {/* <Text style={styles.edittext}>Edit</Text> */}
                         </View> :
                         null
                 }
@@ -54,7 +55,8 @@ const styles = StyleSheet.create({
     },
     iconView: {
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: Platform.OS === 'ios' ? 10 : 0
     },
     edittext: {
         fontFamily: Font.Regular,

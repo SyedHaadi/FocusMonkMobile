@@ -1,283 +1,396 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.focusmonk"
-4    android:versionCode="1"
-5    android:versionName="1.0" >
+4    android:versionCode="5"
+5    android:versionName="1.4" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml
+8-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="33" />
-9-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml
+9-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:4:5-67
-11-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:4:22-64
+11-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:4:5-67
+11-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:4:22-64
 12    <uses-permission android:name="android.permission.CAMERA" />
-12-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:5:5-65
-12-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:5:22-62
+12-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:5:5-65
+12-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:5:22-62
 13    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-13-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:6:5-7:40
-13-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:6:22-78
-14    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-14-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:8:5-77
-14-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:8:22-74
-15    <uses-permission android:name="android.permission.WAKE_LOCK" />
-15-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:9:5-68
-15-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:9:22-65
-16    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
-16-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:11:5-12:53
-16-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:11:22-74
-17    <uses-permission android:name="android.permission.GET_TASKS" />
-17-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:13:5-68
-17-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:13:22-65
-18    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
-18-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:14:5-84
-18-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:14:22-81
-19    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
-19-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:15:5-17:47
-19-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:16:9-62
-20    <!-- Required by older versions of Google Play services to create IID tokens -->
-21    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-21-->[com.google.android.gms:play-services-iid:17.0.0] C:\Users\DELL\.gradle\caches\transforms-3\13c7d66ca6d978966d061c61fe679a6a\transformed\jetified-play-services-iid-17.0.0\AndroidManifest.xml:23:5-82
-21-->[com.google.android.gms:play-services-iid:17.0.0] C:\Users\DELL\.gradle\caches\transforms-3\13c7d66ca6d978966d061c61fe679a6a\transformed\jetified-play-services-iid-17.0.0\AndroidManifest.xml:23:22-79
-22
-23    <permission
-23-->[androidx.core:core:1.9.0] C:\Users\DELL\.gradle\caches\transforms-3\a0ce68e4194efd28e507dd3f43eb31ae\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
-24        android:name="com.focusmonk.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-24-->[androidx.core:core:1.9.0] C:\Users\DELL\.gradle\caches\transforms-3\a0ce68e4194efd28e507dd3f43eb31ae\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
-25        android:protectionLevel="signature" />
-25-->[androidx.core:core:1.9.0] C:\Users\DELL\.gradle\caches\transforms-3\a0ce68e4194efd28e507dd3f43eb31ae\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
-26
-27    <uses-permission android:name="com.focusmonk.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-27-->[androidx.core:core:1.9.0] C:\Users\DELL\.gradle\caches\transforms-3\a0ce68e4194efd28e507dd3f43eb31ae\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
-27-->[androidx.core:core:1.9.0] C:\Users\DELL\.gradle\caches\transforms-3\a0ce68e4194efd28e507dd3f43eb31ae\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
-28    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-28-->[com.android.installreferrer:installreferrer:1.1.2] C:\Users\DELL\.gradle\caches\transforms-3\733cc3accc72e5d67e9bae487cf50655\transformed\jetified-installreferrer-1.1.2\AndroidManifest.xml:9:5-110
-28-->[com.android.installreferrer:installreferrer:1.1.2] C:\Users\DELL\.gradle\caches\transforms-3\733cc3accc72e5d67e9bae487cf50655\transformed\jetified-installreferrer-1.1.2\AndroidManifest.xml:9:22-107
-29
-30    <application
-30-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:19:5-62:19
-31        android:name="com.focusmonk.MainApplication"
-31-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:20:7-38
-32        android:allowBackup="false"
-32-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:24:7-34
-33        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-33-->[androidx.core:core:1.9.0] C:\Users\DELL\.gradle\caches\transforms-3\a0ce68e4194efd28e507dd3f43eb31ae\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
-34        android:icon="@mipmap/ic_launcher"
-34-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:22:7-41
-35        android:label="@string/app_name"
-35-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:21:7-39
-36        android:roundIcon="@mipmap/ic_launcher_round"
-36-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:23:7-52
-37        android:theme="@style/AppTheme" >
-37-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:25:7-38
-38        <activity
-38-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:26:7-34:18
-39            android:name="com.focusmonk.MainActivity"
-39-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:27:9-37
-40            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-40-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:29:9-118
-41            android:exported="true"
-41-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:32:9-32
-42            android:label="@string/app_name"
-42-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:28:9-41
-43            android:launchMode="singleTask"
-43-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:30:9-40
-44            android:windowSoftInputMode="adjustResize" >
-44-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:31:9-51
-45        </activity>
-46        <activity
-46-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:36:7-44:18
-47            android:name="com.focusmonk.SplashActivity"
-47-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:38:11-41
-48            android:exported="true"
-48-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:37:11-34
-49            android:label="@string/app_name" >
-49-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:39:11-43
-50            <intent-filter>
-50-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:40:11-43:27
-51                <action android:name="android.intent.action.MAIN" />
-51-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:41:15-67
-51-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:41:23-64
-52
-53                <category android:name="android.intent.category.LAUNCHER" />
-53-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:42:15-75
-53-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:42:25-72
-54            </intent-filter>
-55        </activity>
-56
-57        <service android:name="com.asterinet.react.bgactions.RNBackgroundActionsTask" />
-57-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:47:9-89
-57-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:47:18-86
-58        <service
-58-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:50:9-61:19
-59            android:name="com.focusmonk.MyService"
-59-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:51:13-38
-60            android:exported="true"
-60-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:52:13-36
-61            android:label="@string/accessibility_service_label"
-61-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:53:13-64
-62            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
-62-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:54:13-79
-63            <intent-filter>
-63-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:55:13-57:29
-64                <action android:name="android.accessibilityservice.AccessibilityService" />
-64-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:56:17-92
-64-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:56:25-89
-65            </intent-filter>
-66
-67            <meta-data
-67-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:58:13-60:72
-68                android:name="android.accessibilityservice"
-68-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:59:17-60
-69                android:resource="@xml/accessibility_service_config" />
-69-->D:\FocusMonk Mobile\android\app\src\main\AndroidManifest.xml:60:17-69
-70        </service>
-71
-72        <meta-data
-72-->[:react-native-firebase_app] D:\FocusMonk Mobile\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:11:9-13:36
-73            android:name="app_data_collection_default_enabled"
-73-->[:react-native-firebase_app] D:\FocusMonk Mobile\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:12:13-63
-74            android:value="true" />
-74-->[:react-native-firebase_app] D:\FocusMonk Mobile\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:13:13-33
-75
-76        <service
-76-->[:react-native-firebase_app] D:\FocusMonk Mobile\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:15:9-23:19
-77            android:name="com.google.firebase.components.ComponentDiscoveryService"
-77-->[:react-native-firebase_app] D:\FocusMonk Mobile\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:16:13-84
-78            android:directBootAware="true"
-78-->[:react-native-firebase_app] D:\FocusMonk Mobile\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:17:13-43
-79            android:exported="false" >
-79-->[:react-native-firebase_app] D:\FocusMonk Mobile\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:18:13-37
-80            <meta-data
-80-->[:react-native-firebase_app] D:\FocusMonk Mobile\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:20:13-22:85
-81                android:name="com.google.firebase.components:io.invertase.firebase.app.ReactNativeFirebaseAppRegistrar"
-81-->[:react-native-firebase_app] D:\FocusMonk Mobile\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:21:17-120
-82                android:value="com.google.firebase.components.ComponentRegistrar" />
-82-->[:react-native-firebase_app] D:\FocusMonk Mobile\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:22:17-82
-83        </service>
-84
-85        <provider
-85-->[:react-native-firebase_app] D:\FocusMonk Mobile\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:25:9-29:38
-86            android:name="io.invertase.firebase.app.ReactNativeFirebaseAppInitProvider"
-86-->[:react-native-firebase_app] D:\FocusMonk Mobile\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:26:13-88
-87            android:authorities="com.focusmonk.reactnativefirebaseappinitprovider"
-87-->[:react-native-firebase_app] D:\FocusMonk Mobile\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:27:13-86
-88            android:exported="false"
-88-->[:react-native-firebase_app] D:\FocusMonk Mobile\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:28:13-37
-89            android:initOrder="99" />
-89-->[:react-native-firebase_app] D:\FocusMonk Mobile\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:29:13-35
-90        <provider
-90-->[:react-native-image-picker] D:\FocusMonk Mobile\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:10:9-18:20
-91            android:name="com.imagepicker.ImagePickerProvider"
-91-->[:react-native-image-picker] D:\FocusMonk Mobile\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:11:13-63
-92            android:authorities="com.focusmonk.imagepickerprovider"
-92-->[:react-native-image-picker] D:\FocusMonk Mobile\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:12:13-71
-93            android:exported="false"
-93-->[:react-native-image-picker] D:\FocusMonk Mobile\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:13:13-37
-94            android:grantUriPermissions="true" >
-94-->[:react-native-image-picker] D:\FocusMonk Mobile\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:14:13-47
-95            <meta-data
-95-->[:react-native-image-picker] D:\FocusMonk Mobile\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:15:13-17:70
-96                android:name="android.support.FILE_PROVIDER_PATHS"
-96-->[:react-native-image-picker] D:\FocusMonk Mobile\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:16:17-67
-97                android:resource="@xml/imagepicker_provider_paths" />
-97-->[:react-native-image-picker] D:\FocusMonk Mobile\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:17:17-67
-98        </provider>
-99        <provider
-99-->[:react-native-share] D:\FocusMonk Mobile\node_modules\react-native-share\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:10:9-18:20
-100            android:name="cl.json.RNShareFileProvider"
-100-->[:react-native-share] D:\FocusMonk Mobile\node_modules\react-native-share\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:11:13-55
-101            android:authorities="com.focusmonk.rnshare.fileprovider"
-101-->[:react-native-share] D:\FocusMonk Mobile\node_modules\react-native-share\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:12:13-72
-102            android:exported="false"
-102-->[:react-native-share] D:\FocusMonk Mobile\node_modules\react-native-share\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:13:13-37
-103            android:grantUriPermissions="true" >
-103-->[:react-native-share] D:\FocusMonk Mobile\node_modules\react-native-share\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:14:13-47
-104            <meta-data
-104-->[:react-native-image-picker] D:\FocusMonk Mobile\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:15:13-17:70
-105                android:name="android.support.FILE_PROVIDER_PATHS"
-105-->[:react-native-image-picker] D:\FocusMonk Mobile\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:16:17-67
-106                android:resource="@xml/share_download_paths" />
-106-->[:react-native-image-picker] D:\FocusMonk Mobile\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:17:17-67
-107        </provider>
-108
-109        <activity
-109-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\DELL\.gradle\caches\transforms-3\0e439dfccc069630cf7caefde194bf69\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:23:9-27:75
-110            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-110-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\DELL\.gradle\caches\transforms-3\0e439dfccc069630cf7caefde194bf69\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:24:13-93
-111            android:excludeFromRecents="true"
-111-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\DELL\.gradle\caches\transforms-3\0e439dfccc069630cf7caefde194bf69\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:25:13-46
-112            android:exported="false"
-112-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\DELL\.gradle\caches\transforms-3\0e439dfccc069630cf7caefde194bf69\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:26:13-37
-113            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-113-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\DELL\.gradle\caches\transforms-3\0e439dfccc069630cf7caefde194bf69\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:27:13-72
-114        <!--
-115            Service handling Google Sign-In user revocation. For apps that do not integrate with
-116            Google Sign-In, this service will never be started.
-117        -->
-118        <service
-118-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\DELL\.gradle\caches\transforms-3\0e439dfccc069630cf7caefde194bf69\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:33:9-37:51
-119            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-119-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\DELL\.gradle\caches\transforms-3\0e439dfccc069630cf7caefde194bf69\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:34:13-89
-120            android:exported="true"
-120-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\DELL\.gradle\caches\transforms-3\0e439dfccc069630cf7caefde194bf69\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:35:13-36
-121            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-121-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\DELL\.gradle\caches\transforms-3\0e439dfccc069630cf7caefde194bf69\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:36:13-107
-122            android:visibleToInstantApps="true" />
-122-->[com.google.android.gms:play-services-auth:20.3.0] C:\Users\DELL\.gradle\caches\transforms-3\0e439dfccc069630cf7caefde194bf69\transformed\jetified-play-services-auth-20.3.0\AndroidManifest.xml:37:13-48
-123
-124        <activity
-124-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\DELL\.gradle\caches\transforms-3\1c23e33edc68b9250c25bcfa67dd17e0\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
-125            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-125-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\DELL\.gradle\caches\transforms-3\1c23e33edc68b9250c25bcfa67dd17e0\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
-126            android:exported="false"
-126-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\DELL\.gradle\caches\transforms-3\1c23e33edc68b9250c25bcfa67dd17e0\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
-127            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-127-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\DELL\.gradle\caches\transforms-3\1c23e33edc68b9250c25bcfa67dd17e0\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+13-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:6:5-81
+13-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:6:22-78
+14    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+14-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:7:5-80
+14-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:7:22-77
+15    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+15-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:8:5-77
+15-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:8:22-74
+16    <uses-permission android:name="android.permission.WAKE_LOCK" />
+16-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:9:5-68
+16-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:9:22-65
+17    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+17-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:11:5-12:53
+17-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:11:22-74
+18    <uses-permission android:name="android.permission.GET_TASKS" />
+18-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:13:5-68
+18-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:13:22-65
+19    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+19-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:14:5-84
+19-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:14:22-81
+20    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+20-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:15:5-17:47
+20-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:16:9-62
+21    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+21-->[:react-native-firebase_auth] /Users/macuser/FocusMonkMobile/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-79
+21-->[:react-native-firebase_auth] /Users/macuser/FocusMonkMobile/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:22-76
+22    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+22-->[com.google.android.gms:play-services-iid:17.0.0] /Users/macuser/.gradle/caches/transforms-3/46be8d2ae7ebc963415a6b1c6860166f/transformed/jetified-play-services-iid-17.0.0/AndroidManifest.xml:23:5-82
+22-->[com.google.android.gms:play-services-iid:17.0.0] /Users/macuser/.gradle/caches/transforms-3/46be8d2ae7ebc963415a6b1c6860166f/transformed/jetified-play-services-iid-17.0.0/AndroidManifest.xml:23:22-79
+23    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+23-->[com.google.android.recaptcha:recaptcha:18.4.0] /Users/macuser/.gradle/caches/transforms-3/a6d2777ffc0982a341d4b9eb6f3de862/transformed/jetified-recaptcha-18.4.0/AndroidManifest.xml:9:5-98
+23-->[com.google.android.recaptcha:recaptcha:18.4.0] /Users/macuser/.gradle/caches/transforms-3/a6d2777ffc0982a341d4b9eb6f3de862/transformed/jetified-recaptcha-18.4.0/AndroidManifest.xml:9:22-95
+24
+25    <permission
+25-->[androidx.core:core:1.9.0] /Users/macuser/.gradle/caches/transforms-3/8e0e9105cdb49c331cad2a9d469197af/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+26        android:name="com.focusmonk.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+26-->[androidx.core:core:1.9.0] /Users/macuser/.gradle/caches/transforms-3/8e0e9105cdb49c331cad2a9d469197af/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+27        android:protectionLevel="signature" />
+27-->[androidx.core:core:1.9.0] /Users/macuser/.gradle/caches/transforms-3/8e0e9105cdb49c331cad2a9d469197af/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+28
+29    <uses-permission android:name="com.focusmonk.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+29-->[androidx.core:core:1.9.0] /Users/macuser/.gradle/caches/transforms-3/8e0e9105cdb49c331cad2a9d469197af/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+29-->[androidx.core:core:1.9.0] /Users/macuser/.gradle/caches/transforms-3/8e0e9105cdb49c331cad2a9d469197af/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+30    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+30-->[com.android.installreferrer:installreferrer:1.1.2] /Users/macuser/.gradle/caches/transforms-3/a94ffbdfb57d61dded21723b33707165/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:9:5-110
+30-->[com.android.installreferrer:installreferrer:1.1.2] /Users/macuser/.gradle/caches/transforms-3/a94ffbdfb57d61dded21723b33707165/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:9:22-107
+31
+32    <application
+32-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:19:5-62:19
+33        android:name="com.focusmonk.MainApplication"
+33-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:20:7-38
+34        android:allowBackup="false"
+34-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:24:7-34
+35        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+35-->[androidx.core:core:1.9.0] /Users/macuser/.gradle/caches/transforms-3/8e0e9105cdb49c331cad2a9d469197af/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+36        android:icon="@mipmap/ic_launcher"
+36-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:22:7-41
+37        android:label="@string/app_name"
+37-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:21:7-39
+38        android:roundIcon="@mipmap/ic_launcher_round"
+38-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:23:7-52
+39        android:theme="@style/AppTheme" >
+39-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:25:7-38
+40        <activity
+40-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:26:7-34:18
+41            android:name="com.focusmonk.MainActivity"
+41-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:27:9-37
+42            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+42-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:29:9-118
+43            android:exported="true"
+43-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:32:9-32
+44            android:label="@string/app_name"
+44-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:28:9-41
+45            android:launchMode="singleTask"
+45-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:30:9-40
+46            android:windowSoftInputMode="adjustResize" >
+46-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:31:9-51
+47        </activity>
+48        <activity
+48-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:36:7-44:18
+49            android:name="com.focusmonk.SplashActivity"
+49-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:38:11-41
+50            android:exported="true"
+50-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:37:11-34
+51            android:label="@string/app_name" >
+51-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:39:11-43
+52            <intent-filter>
+52-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:40:11-43:27
+53                <action android:name="android.intent.action.MAIN" />
+53-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:41:15-67
+53-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:41:23-64
+54
+55                <category android:name="android.intent.category.LAUNCHER" />
+55-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:42:15-75
+55-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:42:25-72
+56            </intent-filter>
+57        </activity>
+58
+59        <service android:name="com.asterinet.react.bgactions.RNBackgroundActionsTask" />
+59-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:47:9-89
+59-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:47:18-86
+60        <service
+60-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:50:9-61:19
+61            android:name="com.focusmonk.MyService"
+61-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:51:13-38
+62            android:exported="true"
+62-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:52:13-36
+63            android:label="@string/accessibility_service_label"
+63-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:53:13-64
+64            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
+64-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:54:13-79
+65            <intent-filter>
+65-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:55:13-57:29
+66                <action android:name="android.accessibilityservice.AccessibilityService" />
+66-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:56:17-92
+66-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:56:25-89
+67            </intent-filter>
+68
+69            <meta-data
+69-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:58:13-60:72
+70                android:name="android.accessibilityservice"
+70-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:59:17-60
+71                android:resource="@xml/accessibility_service_config" />
+71-->/Users/macuser/FocusMonkMobile/android/app/src/main/AndroidManifest.xml:60:17-69
+72        </service>
+73
+74        <meta-data
+74-->[:react-native-firebase_app] /Users/macuser/FocusMonkMobile/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:9-13:36
+75            android:name="app_data_collection_default_enabled"
+75-->[:react-native-firebase_app] /Users/macuser/FocusMonkMobile/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-63
+76            android:value="true" />
+76-->[:react-native-firebase_app] /Users/macuser/FocusMonkMobile/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-33
+77
+78        <service
+78-->[:react-native-firebase_app] /Users/macuser/FocusMonkMobile/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:15:9-23:19
+79            android:name="com.google.firebase.components.ComponentDiscoveryService"
+79-->[:react-native-firebase_app] /Users/macuser/FocusMonkMobile/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:16:13-84
+80            android:directBootAware="true"
+80-->[:react-native-firebase_app] /Users/macuser/FocusMonkMobile/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:17:13-43
+81            android:exported="false" >
+81-->[:react-native-firebase_app] /Users/macuser/FocusMonkMobile/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:18:13-37
+82            <meta-data
+82-->[:react-native-firebase_app] /Users/macuser/FocusMonkMobile/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:20:13-22:85
+83                android:name="com.google.firebase.components:io.invertase.firebase.app.ReactNativeFirebaseAppRegistrar"
+83-->[:react-native-firebase_app] /Users/macuser/FocusMonkMobile/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:21:17-120
+84                android:value="com.google.firebase.components.ComponentRegistrar" />
+84-->[:react-native-firebase_app] /Users/macuser/FocusMonkMobile/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:22:17-82
+85            <meta-data
+85-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:69:13-71:85
+86                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+86-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:70:17-109
+87                android:value="com.google.firebase.components.ComponentRegistrar" />
+87-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:71:17-82
+88            <meta-data
+88-->[com.google.firebase:firebase-common-ktx:20.4.2] /Users/macuser/.gradle/caches/transforms-3/77cf515ed4e10778f5a0c35e30502908/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:12:13-14:85
+89                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+89-->[com.google.firebase:firebase-common-ktx:20.4.2] /Users/macuser/.gradle/caches/transforms-3/77cf515ed4e10778f5a0c35e30502908/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:13:17-116
+90                android:value="com.google.firebase.components.ComponentRegistrar" />
+90-->[com.google.firebase:firebase-common-ktx:20.4.2] /Users/macuser/.gradle/caches/transforms-3/77cf515ed4e10778f5a0c35e30502908/transformed/jetified-firebase-common-ktx-20.4.2/AndroidManifest.xml:14:17-82
+91            <meta-data
+91-->[com.google.firebase:firebase-common:20.4.2] /Users/macuser/.gradle/caches/transforms-3/1135c3680e36becc6f8640c497734523/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:35:13-37:85
+92                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+92-->[com.google.firebase:firebase-common:20.4.2] /Users/macuser/.gradle/caches/transforms-3/1135c3680e36becc6f8640c497734523/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:36:17-109
+93                android:value="com.google.firebase.components.ComponentRegistrar" />
+93-->[com.google.firebase:firebase-common:20.4.2] /Users/macuser/.gradle/caches/transforms-3/1135c3680e36becc6f8640c497734523/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:37:17-82
+94        </service>
+95
+96        <provider
+96-->[:react-native-firebase_app] /Users/macuser/FocusMonkMobile/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:25:9-29:38
+97            android:name="io.invertase.firebase.app.ReactNativeFirebaseAppInitProvider"
+97-->[:react-native-firebase_app] /Users/macuser/FocusMonkMobile/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:26:13-88
+98            android:authorities="com.focusmonk.reactnativefirebaseappinitprovider"
+98-->[:react-native-firebase_app] /Users/macuser/FocusMonkMobile/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:27:13-86
+99            android:exported="false"
+99-->[:react-native-firebase_app] /Users/macuser/FocusMonkMobile/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:28:13-37
+100            android:initOrder="99" />
+100-->[:react-native-firebase_app] /Users/macuser/FocusMonkMobile/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:29:13-35
+101        <provider
+101-->[:react-native-image-picker] /Users/macuser/FocusMonkMobile/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-18:20
+102            android:name="com.imagepicker.ImagePickerProvider"
+102-->[:react-native-image-picker] /Users/macuser/FocusMonkMobile/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-63
+103            android:authorities="com.focusmonk.imagepickerprovider"
+103-->[:react-native-image-picker] /Users/macuser/FocusMonkMobile/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-71
+104            android:exported="false"
+104-->[:react-native-image-picker] /Users/macuser/FocusMonkMobile/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-37
+105            android:grantUriPermissions="true" >
+105-->[:react-native-image-picker] /Users/macuser/FocusMonkMobile/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:14:13-47
+106            <meta-data
+106-->[:react-native-image-picker] /Users/macuser/FocusMonkMobile/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:15:13-17:70
+107                android:name="android.support.FILE_PROVIDER_PATHS"
+107-->[:react-native-image-picker] /Users/macuser/FocusMonkMobile/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:16:17-67
+108                android:resource="@xml/imagepicker_provider_paths" />
+108-->[:react-native-image-picker] /Users/macuser/FocusMonkMobile/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:17:17-67
+109        </provider>
+110        <provider
+110-->[:react-native-share] /Users/macuser/FocusMonkMobile/node_modules/react-native-share/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-18:20
+111            android:name="cl.json.RNShareFileProvider"
+111-->[:react-native-share] /Users/macuser/FocusMonkMobile/node_modules/react-native-share/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-55
+112            android:authorities="com.focusmonk.rnshare.fileprovider"
+112-->[:react-native-share] /Users/macuser/FocusMonkMobile/node_modules/react-native-share/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-72
+113            android:exported="false"
+113-->[:react-native-share] /Users/macuser/FocusMonkMobile/node_modules/react-native-share/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-37
+114            android:grantUriPermissions="true" >
+114-->[:react-native-share] /Users/macuser/FocusMonkMobile/node_modules/react-native-share/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:14:13-47
+115            <meta-data
+115-->[:react-native-image-picker] /Users/macuser/FocusMonkMobile/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:15:13-17:70
+116                android:name="android.support.FILE_PROVIDER_PATHS"
+116-->[:react-native-image-picker] /Users/macuser/FocusMonkMobile/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:16:17-67
+117                android:resource="@xml/share_download_paths" />
+117-->[:react-native-image-picker] /Users/macuser/FocusMonkMobile/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:17:17-67
+118        </provider>
+119        <provider
+119-->[:react-native-webview] /Users/macuser/FocusMonkMobile/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-18:20
+120            android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
+120-->[:react-native-webview] /Users/macuser/FocusMonkMobile/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-83
+121            android:authorities="com.focusmonk.fileprovider"
+121-->[:react-native-webview] /Users/macuser/FocusMonkMobile/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-64
+122            android:exported="false"
+122-->[:react-native-webview] /Users/macuser/FocusMonkMobile/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-37
+123            android:grantUriPermissions="true" >
+123-->[:react-native-webview] /Users/macuser/FocusMonkMobile/node_modules/react-native-webview/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:14:13-47
+124            <meta-data
+124-->[:react-native-image-picker] /Users/macuser/FocusMonkMobile/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:15:13-17:70
+125                android:name="android.support.FILE_PROVIDER_PATHS"
+125-->[:react-native-image-picker] /Users/macuser/FocusMonkMobile/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:16:17-67
+126                android:resource="@xml/file_provider_paths" />
+126-->[:react-native-image-picker] /Users/macuser/FocusMonkMobile/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:17:17-67
+127        </provider>
 128
-129        <provider
-129-->[com.google.firebase:firebase-common:20.3.2] C:\Users\DELL\.gradle\caches\transforms-3\39e8f451c88b18792529db9c5cba4f54\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:25:9-30:39
-130            android:name="com.google.firebase.provider.FirebaseInitProvider"
-130-->[com.google.firebase:firebase-common:20.3.2] C:\Users\DELL\.gradle\caches\transforms-3\39e8f451c88b18792529db9c5cba4f54\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:26:13-77
-131            android:authorities="com.focusmonk.firebaseinitprovider"
-131-->[com.google.firebase:firebase-common:20.3.2] C:\Users\DELL\.gradle\caches\transforms-3\39e8f451c88b18792529db9c5cba4f54\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:27:13-72
-132            android:directBootAware="true"
-132-->[com.google.firebase:firebase-common:20.3.2] C:\Users\DELL\.gradle\caches\transforms-3\39e8f451c88b18792529db9c5cba4f54\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:28:13-43
-133            android:exported="false"
-133-->[com.google.firebase:firebase-common:20.3.2] C:\Users\DELL\.gradle\caches\transforms-3\39e8f451c88b18792529db9c5cba4f54\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:29:13-37
-134            android:initOrder="100" />
-134-->[com.google.firebase:firebase-common:20.3.2] C:\Users\DELL\.gradle\caches\transforms-3\39e8f451c88b18792529db9c5cba4f54\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:30:13-36
-135
-136        <meta-data
-136-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\DELL\.gradle\caches\transforms-3\f65ff4b37adc50e08a0564dbbd5f94f2\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
-137            android:name="com.google.android.gms.version"
-137-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\DELL\.gradle\caches\transforms-3\f65ff4b37adc50e08a0564dbbd5f94f2\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
-138            android:value="@integer/google_play_services_version" />
-138-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\DELL\.gradle\caches\transforms-3\f65ff4b37adc50e08a0564dbbd5f94f2\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
-139
-140        <provider
-140-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\1fdb3e707f09415b614e17fa269aa0b2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-141            android:name="androidx.startup.InitializationProvider"
-141-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\1fdb3e707f09415b614e17fa269aa0b2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
-142            android:authorities="com.focusmonk.androidx-startup"
-142-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\1fdb3e707f09415b614e17fa269aa0b2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
-143            android:exported="false" >
-143-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\1fdb3e707f09415b614e17fa269aa0b2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
-144            <meta-data
-144-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\1fdb3e707f09415b614e17fa269aa0b2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-145                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-145-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\1fdb3e707f09415b614e17fa269aa0b2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
-146                android:value="androidx.startup" />
-146-->[androidx.emoji2:emoji2:1.2.0] C:\Users\DELL\.gradle\caches\transforms-3\1fdb3e707f09415b614e17fa269aa0b2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
-147            <meta-data
-147-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\DELL\.gradle\caches\transforms-3\415a737dee7be9ada64716c3a32b097c\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
-148                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-148-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\DELL\.gradle\caches\transforms-3\415a737dee7be9ada64716c3a32b097c\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
-149                android:value="androidx.startup" />
-149-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\DELL\.gradle\caches\transforms-3\415a737dee7be9ada64716c3a32b097c\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
-150        </provider>
-151    </application>
+129        <activity
+129-->[com.google.android.gms:play-services-auth:20.7.0] /Users/macuser/.gradle/caches/transforms-3/cf5f89fcc8148a7d988f2a950441403a/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:23:9-27:75
+130            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+130-->[com.google.android.gms:play-services-auth:20.7.0] /Users/macuser/.gradle/caches/transforms-3/cf5f89fcc8148a7d988f2a950441403a/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:24:13-93
+131            android:excludeFromRecents="true"
+131-->[com.google.android.gms:play-services-auth:20.7.0] /Users/macuser/.gradle/caches/transforms-3/cf5f89fcc8148a7d988f2a950441403a/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:25:13-46
+132            android:exported="false"
+132-->[com.google.android.gms:play-services-auth:20.7.0] /Users/macuser/.gradle/caches/transforms-3/cf5f89fcc8148a7d988f2a950441403a/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:26:13-37
+133            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+133-->[com.google.android.gms:play-services-auth:20.7.0] /Users/macuser/.gradle/caches/transforms-3/cf5f89fcc8148a7d988f2a950441403a/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:27:13-72
+134        <!--
+135            Service handling Google Sign-In user revocation. For apps that do not integrate with
+136            Google Sign-In, this service will never be started.
+137        -->
+138        <service
+138-->[com.google.android.gms:play-services-auth:20.7.0] /Users/macuser/.gradle/caches/transforms-3/cf5f89fcc8148a7d988f2a950441403a/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:33:9-37:51
+139            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+139-->[com.google.android.gms:play-services-auth:20.7.0] /Users/macuser/.gradle/caches/transforms-3/cf5f89fcc8148a7d988f2a950441403a/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:34:13-89
+140            android:exported="true"
+140-->[com.google.android.gms:play-services-auth:20.7.0] /Users/macuser/.gradle/caches/transforms-3/cf5f89fcc8148a7d988f2a950441403a/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:35:13-36
+141            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+141-->[com.google.android.gms:play-services-auth:20.7.0] /Users/macuser/.gradle/caches/transforms-3/cf5f89fcc8148a7d988f2a950441403a/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:36:13-107
+142            android:visibleToInstantApps="true" />
+142-->[com.google.android.gms:play-services-auth:20.7.0] /Users/macuser/.gradle/caches/transforms-3/cf5f89fcc8148a7d988f2a950441403a/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:37:13-48
+143
+144        <activity
+144-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:29:9-46:20
+145            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+145-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:30:13-80
+146            android:excludeFromRecents="true"
+146-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:31:13-46
+147            android:exported="true"
+147-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:32:13-36
+148            android:launchMode="singleTask"
+148-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:33:13-44
+149            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+149-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:34:13-72
+150            <intent-filter>
+150-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:35:13-45:29
+151                <action android:name="android.intent.action.VIEW" />
+151-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:36:17-69
+151-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:36:25-66
 152
-153</manifest>
+153                <category android:name="android.intent.category.DEFAULT" />
+153-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:38:17-76
+153-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:38:27-73
+154                <category android:name="android.intent.category.BROWSABLE" />
+154-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:39:17-78
+154-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:39:27-75
+155
+156                <data
+156-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:41:17-44:51
+157                    android:host="firebase.auth"
+157-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:42:21-49
+158                    android:path="/"
+158-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:43:21-37
+159                    android:scheme="genericidp" />
+159-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:44:21-48
+160            </intent-filter>
+161        </activity>
+162        <activity
+162-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:47:9-64:20
+163            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+163-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:48:13-79
+164            android:excludeFromRecents="true"
+164-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:49:13-46
+165            android:exported="true"
+165-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:50:13-36
+166            android:launchMode="singleTask"
+166-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:51:13-44
+167            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+167-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:52:13-72
+168            <intent-filter>
+168-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:53:13-63:29
+169                <action android:name="android.intent.action.VIEW" />
+169-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:36:17-69
+169-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:36:25-66
+170
+171                <category android:name="android.intent.category.DEFAULT" />
+171-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:38:17-76
+171-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:38:27-73
+172                <category android:name="android.intent.category.BROWSABLE" />
+172-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:39:17-78
+172-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:39:27-75
+173
+174                <data
+174-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:41:17-44:51
+175                    android:host="firebase.auth"
+175-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:42:21-49
+176                    android:path="/"
+176-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:43:21-37
+177                    android:scheme="recaptcha" />
+177-->[com.google.firebase:firebase-auth:22.3.1] /Users/macuser/.gradle/caches/transforms-3/0c073dd63dd39d2a1495513f066c3902/transformed/jetified-firebase-auth-22.3.1/AndroidManifest.xml:44:21-48
+178            </intent-filter>
+179        </activity>
+180        <activity
+180-->[com.google.android.gms:play-services-base:18.0.1] /Users/macuser/.gradle/caches/transforms-3/677c736bd5d53749165df10014f0a79d/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+181            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+181-->[com.google.android.gms:play-services-base:18.0.1] /Users/macuser/.gradle/caches/transforms-3/677c736bd5d53749165df10014f0a79d/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+182            android:exported="false"
+182-->[com.google.android.gms:play-services-base:18.0.1] /Users/macuser/.gradle/caches/transforms-3/677c736bd5d53749165df10014f0a79d/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+183            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+183-->[com.google.android.gms:play-services-base:18.0.1] /Users/macuser/.gradle/caches/transforms-3/677c736bd5d53749165df10014f0a79d/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+184
+185        <provider
+185-->[com.google.firebase:firebase-common:20.4.2] /Users/macuser/.gradle/caches/transforms-3/1135c3680e36becc6f8640c497734523/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:23:9-28:39
+186            android:name="com.google.firebase.provider.FirebaseInitProvider"
+186-->[com.google.firebase:firebase-common:20.4.2] /Users/macuser/.gradle/caches/transforms-3/1135c3680e36becc6f8640c497734523/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:24:13-77
+187            android:authorities="com.focusmonk.firebaseinitprovider"
+187-->[com.google.firebase:firebase-common:20.4.2] /Users/macuser/.gradle/caches/transforms-3/1135c3680e36becc6f8640c497734523/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:25:13-72
+188            android:directBootAware="true"
+188-->[com.google.firebase:firebase-common:20.4.2] /Users/macuser/.gradle/caches/transforms-3/1135c3680e36becc6f8640c497734523/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:26:13-43
+189            android:exported="false"
+189-->[com.google.firebase:firebase-common:20.4.2] /Users/macuser/.gradle/caches/transforms-3/1135c3680e36becc6f8640c497734523/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:27:13-37
+190            android:initOrder="100" />
+190-->[com.google.firebase:firebase-common:20.4.2] /Users/macuser/.gradle/caches/transforms-3/1135c3680e36becc6f8640c497734523/transformed/jetified-firebase-common-20.4.2/AndroidManifest.xml:28:13-36
+191
+192        <meta-data
+192-->[com.google.android.gms:play-services-basement:18.2.0] /Users/macuser/.gradle/caches/transforms-3/53fef2cae9fb231f542afce5d32236d5/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:21:9-23:69
+193            android:name="com.google.android.gms.version"
+193-->[com.google.android.gms:play-services-basement:18.2.0] /Users/macuser/.gradle/caches/transforms-3/53fef2cae9fb231f542afce5d32236d5/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:22:13-58
+194            android:value="@integer/google_play_services_version" />
+194-->[com.google.android.gms:play-services-basement:18.2.0] /Users/macuser/.gradle/caches/transforms-3/53fef2cae9fb231f542afce5d32236d5/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:23:13-66
+195
+196        <provider
+196-->[androidx.emoji2:emoji2:1.2.0] /Users/macuser/.gradle/caches/transforms-3/3011d1ebca36c3bd77c8d470716d6149/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+197            android:name="androidx.startup.InitializationProvider"
+197-->[androidx.emoji2:emoji2:1.2.0] /Users/macuser/.gradle/caches/transforms-3/3011d1ebca36c3bd77c8d470716d6149/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+198            android:authorities="com.focusmonk.androidx-startup"
+198-->[androidx.emoji2:emoji2:1.2.0] /Users/macuser/.gradle/caches/transforms-3/3011d1ebca36c3bd77c8d470716d6149/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+199            android:exported="false" >
+199-->[androidx.emoji2:emoji2:1.2.0] /Users/macuser/.gradle/caches/transforms-3/3011d1ebca36c3bd77c8d470716d6149/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+200            <meta-data
+200-->[androidx.emoji2:emoji2:1.2.0] /Users/macuser/.gradle/caches/transforms-3/3011d1ebca36c3bd77c8d470716d6149/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+201                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+201-->[androidx.emoji2:emoji2:1.2.0] /Users/macuser/.gradle/caches/transforms-3/3011d1ebca36c3bd77c8d470716d6149/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+202                android:value="androidx.startup" />
+202-->[androidx.emoji2:emoji2:1.2.0] /Users/macuser/.gradle/caches/transforms-3/3011d1ebca36c3bd77c8d470716d6149/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+203            <meta-data
+203-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/macuser/.gradle/caches/transforms-3/3b5eff5803ca01d5785e5ebad4dbf4f9/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+204                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+204-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/macuser/.gradle/caches/transforms-3/3b5eff5803ca01d5785e5ebad4dbf4f9/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+205                android:value="androidx.startup" />
+205-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/macuser/.gradle/caches/transforms-3/3b5eff5803ca01d5785e5ebad4dbf4f9/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+206        </provider>
+207    </application>
+208
+209</manifest>

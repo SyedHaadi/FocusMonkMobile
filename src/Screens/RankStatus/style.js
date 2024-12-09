@@ -49,6 +49,18 @@ const styles = StyleSheet.create({
 
         elevation: 5,
     },
+    barView: {
+        alignSelf: 'center',
+        height: height_screen * 0.05,
+        width: width_screen * 0.68,
+        borderWidth: 1,
+        borderColor: Color.Grey,
+        borderRadius: height_screen * 0.025,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginVertical: height_screen * 0.012
+    },
     profileView: {
         width: '99%',
         alignSelf: 'center',

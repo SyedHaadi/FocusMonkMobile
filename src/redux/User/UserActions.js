@@ -56,30 +56,30 @@ export const getUserData = navigation => async dispatch => {
   } catch (error) {
     dispatch(setAppLoading(false));
     console.log("Catch Error User Data.......", error.message);
-    
+
     if (
       error?.response?.data?.message == "Unauthorized" ||
       error?.response?.status == 401
-  ) {
+    ) {
       try {
-          removeLocalStorage(STORAGE_KEYS.TOKEN);
-          CalendarModule.createCalendarEvent('clear', "");
+        removeLocalStorage(STORAGE_KEYS.TOKEN);
+        CalendarModule.createCalendarEvent('clear', "");
 
-          stopBackgroundService();
-          navigation.dispatch(
-              CommonActions.reset({
-                  index: 1,
-                  routes: [
-                      { name: 'Login' },
-                  ],
-              })
-          );
+        stopBackgroundService();
+        navigation.dispatch(
+          CommonActions.reset({
+            index: 1,
+            routes: [
+              { name: 'Login' },
+            ],
+          })
+        );
       } catch (err) {
-          console.log(err);
+        console.log(err);
       }
 
-  }
-    
+    }
+
     if (error.toJSON().message === 'Network Error') {
       Toast.show({
         type: 'error',
@@ -126,11 +126,8 @@ export const updateUserData = (data) => async dispatch => {
 
     dispatch(setAppLoading(false));
     if (response?.status) {
-      dispatch(getUserData());
-
-      Alert.alert('Success', response?.data?.message, [
-        { text: 'OK', onPress: () => navigate('DashBoard') },
-      ]);
+      await dispatch(getUserData());
+      return true;
 
     }
     else {
@@ -219,14 +216,63 @@ export const getUserRankTrophy = payload => async dispatch => {
   }
 };
 
+export const checkDistraction = (data) => async dispatch => {
+
+  const token = await getLocalStorage(STORAGE_KEYS.TOKEN);
+
+  // dispatch(setAppLoading(true));
+  try {
+    console.log("Api Data .....", data);
+    const response = await axios.post(`${baseUrl}/managment/coinmanagment`, data, {
+      headers: {
+        'x-access-token': token
+      }
+    });
+    console.log("This is the Check Distraction response .....", response?.data);
+    // dispatch(setAppLoading(false));
+
+    if (response?.status === 200) {
+      console.log("Api Success ......")
+      return;
+    }
+    else {
+      Toast.show({
+        type: 'error',
+        text1: 'Something went wrong!',
+      });
+    }
+
+  } catch (error) {
+    // dispatch(setAppLoading(false));
+    console.log("Catch me ", error.response.data.message)
+    if (error.toJSON().message === 'Network Error') {
+      Toast.show({
+        type: 'error',
+        text1: 'No internet connection !',
+      });
+    }
+    else if (error?.response?.data) {
+      Toast.show({
+        type: 'error',
+        text1: error?.response?.data?.message,
+      });
+    } else {
+      Toast.show({
+        type: 'error',
+        text1: error?.message,
+      });
+    }
+  }
+};
+
 export const getTimeData = payload => async dispatch => {
 
   const companyId = await getLocalStorage(STORAGE_KEYS.COMPANY_ID);
   const token = await getLocalStorage(STORAGE_KEYS.TOKEN);
 
-  if (payload){
+  if (payload) {
     dispatch(setAppLoading(false));
-  }else{
+  } else {
     dispatch(setAppLoading(true));
   }
 
@@ -246,25 +292,25 @@ export const getTimeData = payload => async dispatch => {
         payload: response?.data,
       });
 
-      if (response.data.scheduledata.schedule.length > 0){
+      if (response.data.scheduledata.schedule.length > 0) {
 
         let array = [];
         let dataa = response.data.scheduledata.schedule[0].schedule;
-  
+
         for (let x of dataa) {
           if (x.status == true) {
             let count = dayCounter(x.days.toLowerCase());
-  
+
             //Duty time calculation
             let start_time = new Date(x.start_time);
             let end_time = new Date(x.end_time);
-  
+
             let start_minute = addZero(start_time.getMinutes());
             let end_minute = addZero(end_time.getMinutes());
-  
+
             let duty_hours = [];
             duty_hours.push(start_time.getHours());
-  
+
             if (start_time.getHours() > end_time.getHours()) {
               let totalhours = 24 - (start_time.getHours() - end_time.getHours());
               for (let i = 0; i < totalhours; i++) {
@@ -278,7 +324,7 @@ export const getTimeData = payload => async dispatch => {
                 duty_hours.push(start_time.getHours());
               }
             }
-  
+
             //break time calculation
             let break_timestart = new Date(x.break_timestart);
             let break_timeend = new Date(x.break_timeend);
@@ -286,7 +332,7 @@ export const getTimeData = payload => async dispatch => {
             let break_end_minute = addZero(break_timeend.getMinutes());
             let break_hours = [];
             break_hours.push(break_timestart.getHours());
-  
+
             if (break_timestart.getHours() > break_timeend.getHours()) {
               let totalhours =
                 24 - (break_timestart.getHours() - break_timeend.getHours());
@@ -297,13 +343,13 @@ export const getTimeData = payload => async dispatch => {
             } else {
               let totalhours =
                 break_timeend.getHours() - break_timestart.getHours();
-  
+
               for (let i = 0; i < totalhours; i++) {
                 break_timestart.setHours(break_timestart.getHours() + 1);
                 break_hours.push(break_timestart.getHours());
               }
             }
-  
+
             //final data
             let data = {
               day: count,
@@ -314,25 +360,25 @@ export const getTimeData = payload => async dispatch => {
               break_end_minute: break_end_minute,
               break_hours: break_hours,
             };
-  
+
             array.push(data);
           }
         }
-  
+
         setLocalStorage(STORAGE_KEYS?.ScheduleData, JSON.stringify(array));
-  
+
         //save locally
         if (Platform.OS == 'android') {
           CalendarModule.createCalendarEvent('schedule-api', JSON.stringify(dataa));
           CalendarModule.createCalendarEvent('schedule', JSON.stringify(array));
         }
-    
+
         dispatch({
           type: SET_SCHEDULE,
           payload: dataa,
         });
-        
-      }else{
+
+      } else {
         dispatch({
           type: SET_SCHEDULE,
           payload: [],

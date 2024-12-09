@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.focusmonk.app-mergeReleaseResources-37:/values-watch-v21/values-watch-v21.xml",
+            "map": [
+                {
+                    "source": "/Users/macuser/.gradle/caches/transforms-3/f463a211873750a5a590e8344e06ff8a/transformed/appcompat-1.6.1/res/values-watch-v21/values-watch-v21.xml",
+                    "from": {
+                        "startLines": "2,6,10",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,271,499",
+                        "endLines": "5,9,13",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "266,494,724"
+                    }
+                }
+            ]
+        }
+    ]
+}

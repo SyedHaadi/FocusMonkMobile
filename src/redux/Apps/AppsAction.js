@@ -20,9 +20,9 @@ export const setApps = payload => async dispatch => {
   const companyId = await getLocalStorage(STORAGE_KEYS.COMPANY_ID);
   const token = await getLocalStorage(STORAGE_KEYS.TOKEN);
 
-  if (payload){
+  if (payload) {
     dispatch(setAppLoading(false));
-  }else{
+  } else {
     dispatch(setAppLoading(true));
   }
 
@@ -47,6 +47,8 @@ export const setApps = payload => async dispatch => {
       urls.push("bing.com");
 
       app_android.push("com.focusmonk");
+      app_android.push("com.focusmonk1");
+
 
       if (apps) {
 
@@ -92,7 +94,7 @@ export const setApps = payload => async dispatch => {
         app_android ? CalendarModule.createCalendarEvent('android', JSON.stringify(app_android)) : "";
         urls ? CalendarModule.createCalendarEvent('urls', urls.toString()) : "";
 
-        CalendarModule.createCalendarEvent('get_all_apps','');
+        CalendarModule.createCalendarEvent('get_all_apps', '');
 
         // app_ios ? CalendarModule.createCalendarEvent('ios', JSON.stringify(app_ios)) : "";
       }
@@ -133,18 +135,71 @@ export const setApps = payload => async dispatch => {
   }
 };
 
+export const getCoinsTrophies = payload => async dispatch => {
+
+  const userId = await getLocalStorage(STORAGE_KEYS.USER_ID);
+  const token = await getLocalStorage(STORAGE_KEYS.TOKEN);
+  dispatch(setAppLoading(true));
+
+  try {
+    const response = await axios.get(`${baseUrl}/coins/getcoinandtrophy/${userId}`, {
+      headers: {
+        'x-access-token': token
+      }
+    });
+    // console.log("This is the get Coins and trophies response .....", response);
+    dispatch(setAppLoading(false));
+
+    if (response?.status === 200) {
+      dispatch({
+        type: GET_COINS_TROPHIES,
+        payload: response?.data,
+      });
+
+    }
+    else {
+      Toast.show({
+        type: 'error',
+        text1: 'Something went wrong!',
+      });
+    }
+
+  } catch (error) {
+    dispatch(setAppLoading(false));
+    // console.log("Catch Error .......", error.message)
+    if (error.toJSON().message === 'Network Error') {
+      Toast.show({
+        type: 'error',
+        text1: 'No internet connection !',
+      });
+    }
+    else if (error?.response?.data) {
+      Toast.show({
+        type: 'error',
+        text1: error?.response?.data?.message,
+      });
+    } else {
+      Toast.show({
+        type: 'error',
+        text1: error?.message,
+      });
+    }
+  }
+};
+
+
 export const getRankStatus = payload => async dispatch => {
 
   const companyId = await getLocalStorage(STORAGE_KEYS.COMPANY_ID);
   const token = await getLocalStorage(STORAGE_KEYS.TOKEN);
 
-  if (payload){
+  if (payload) {
     dispatch(setAppLoading(false));
-  }else{
+  } else {
     dispatch(setAppLoading(true));
   }
-  
-  
+
+
   try {
     const body = {
       "company_id": companyId
@@ -154,7 +209,7 @@ export const getRankStatus = payload => async dispatch => {
         'x-access-token': token
       }
     });
-    // console.log("This is the get Rank YEhi status rsponse .....", response?.data);
+    // console.log("This is the get Rank status rsponse .....", response?.data);
     dispatch(setAppLoading(false));
 
     if (response?.status === 200) {
@@ -197,27 +252,216 @@ export const getRankStatus = payload => async dispatch => {
   }
 };
 
-export const getCoinsTrophies = payload => async dispatch => {
+export const getTotalRank = payload => async dispatch => {
 
-  const userId = await getLocalStorage(STORAGE_KEYS.USER_ID);
+  const companyId = await getLocalStorage(STORAGE_KEYS.COMPANY_ID);
   const token = await getLocalStorage(STORAGE_KEYS.TOKEN);
-  dispatch(setAppLoading(true));
+
+  if (payload) {
+    dispatch(setAppLoading(false));
+  } else {
+    dispatch(setAppLoading(true));
+  }
 
   try {
-    const response = await axios.get(`${baseUrl}/coins/getcoinandtrophy/${userId}`, {
+    const body = {
+      "company_id": companyId
+    }
+    const response = await axios.post(`${baseUrl}/coins/gettingranks`, body, {
       headers: {
         'x-access-token': token
       }
     });
-    // console.log("This is the get Coins and trophies response .....", response);
+    // console.log("This is the get Rank YEhi status rsponse .....", response?.data);
     dispatch(setAppLoading(false));
 
     if (response?.status === 200) {
       dispatch({
-        type: GET_COINS_TROPHIES,
-        payload: response?.data,
+        type: GET_RANK_STATUS,
+        payload: response?.data?.data,
       });
+    }
+    else {
+      Toast.show({
+        type: 'error',
+        text1: 'Something went wrong!',
+      });
+    }
 
+  } catch (error) {
+    dispatch(setAppLoading(false));
+    // console.log("Catch Error .......", error.message)
+    if (error.toJSON().message === 'Network Error') {
+      Toast.show({
+        type: 'error',
+        text1: 'No internet connection !',
+      });
+    }
+    else if (error?.response?.data) {
+      Toast.show({
+        type: 'error',
+        text1: error?.response?.data?.message,
+      });
+    } else {
+      Toast.show({
+        type: 'error',
+        text1: error?.message,
+      });
+    }
+  }
+};
+
+export const getTodayRank = payload => async dispatch => {
+
+  const companyId = await getLocalStorage(STORAGE_KEYS.COMPANY_ID);
+  const token = await getLocalStorage(STORAGE_KEYS.TOKEN);
+
+  if (payload) {
+    dispatch(setAppLoading(false));
+  } else {
+    dispatch(setAppLoading(true));
+  }
+
+
+  try {
+    const body = {
+      "company_id": companyId
+    }
+    const response = await axios.post(`${baseUrl}/coins/gettingtodayranks`, body, {
+      headers: {
+        'x-access-token': token
+      }
+    });
+    // console.log("This is the get Rank YEhi status rsponse .....", response?.data);
+    dispatch(setAppLoading(false));
+
+    if (response?.status === 200) {
+      dispatch({
+        type: GET_RANK_STATUS,
+        payload: response?.data?.data,
+      });
+    }
+    else {
+      Toast.show({
+        type: 'error',
+        text1: 'Something went wrong!',
+      });
+    }
+
+  } catch (error) {
+    dispatch(setAppLoading(false));
+    // console.log("Catch Error .......", error.message)
+    if (error.toJSON().message === 'Network Error') {
+      Toast.show({
+        type: 'error',
+        text1: 'No internet connection !',
+      });
+    }
+    else if (error?.response?.data) {
+      Toast.show({
+        type: 'error',
+        text1: error?.response?.data?.message,
+      });
+    } else {
+      Toast.show({
+        type: 'error',
+        text1: error?.message,
+      });
+    }
+  }
+};
+
+
+export const getWeeklyRank = payload => async dispatch => {
+
+  const companyId = await getLocalStorage(STORAGE_KEYS.COMPANY_ID);
+  const token = await getLocalStorage(STORAGE_KEYS.TOKEN);
+
+  if (payload) {
+    dispatch(setAppLoading(false));
+  } else {
+    dispatch(setAppLoading(true));
+  }
+
+
+  try {
+    const body = {
+      "company_id": companyId
+    }
+    const response = await axios.post(`${baseUrl}/coins/gettingweeklyranks`, body, {
+      headers: {
+        'x-access-token': token
+      }
+    });
+    // console.log("This is the get Rank YEhi status rsponse .....", response?.data);
+    dispatch(setAppLoading(false));
+
+    if (response?.status === 200) {
+      dispatch({
+        type: GET_RANK_STATUS,
+        payload: response?.data?.data,
+      });
+    }
+    else {
+      Toast.show({
+        type: 'error',
+        text1: 'Something went wrong!',
+      });
+    }
+
+  } catch (error) {
+    dispatch(setAppLoading(false));
+    // console.log("Catch Error .......", error.message)
+    if (error.toJSON().message === 'Network Error') {
+      Toast.show({
+        type: 'error',
+        text1: 'No internet connection !',
+      });
+    }
+    else if (error?.response?.data) {
+      Toast.show({
+        type: 'error',
+        text1: error?.response?.data?.message,
+      });
+    } else {
+      Toast.show({
+        type: 'error',
+        text1: error?.message,
+      });
+    }
+  }
+};
+
+
+export const getMonthlyRank = payload => async dispatch => {
+
+  const companyId = await getLocalStorage(STORAGE_KEYS.COMPANY_ID);
+  const token = await getLocalStorage(STORAGE_KEYS.TOKEN);
+
+  if (payload) {
+    dispatch(setAppLoading(false));
+  } else {
+    dispatch(setAppLoading(true));
+  }
+
+
+  try {
+    const body = {
+      "company_id": companyId
+    }
+    const response = await axios.post(`${baseUrl}/coins/gettingmonthlyranks`, body, {
+      headers: {
+        'x-access-token': token
+      }
+    });
+    // console.log("This is the get Rank YEhi status rsponse .....", response?.data);
+    dispatch(setAppLoading(false));
+
+    if (response?.status === 200) {
+      dispatch({
+        type: GET_RANK_STATUS,
+        payload: response?.data?.data,
+      });
     }
     else {
       Toast.show({

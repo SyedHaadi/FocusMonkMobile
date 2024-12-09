@@ -22,7 +22,7 @@ export const getRoadMap = payload => async dispatch => {
                 'x-access-token': token
             }
         });
-        // console.log("This is the get road map response .....", response.data);
+        console.log("This is the get road map response .....", response.data);
         dispatch(setAppLoading(false));
 
         if (response?.status === 200) {

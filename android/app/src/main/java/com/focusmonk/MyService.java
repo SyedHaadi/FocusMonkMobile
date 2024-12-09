@@ -52,7 +52,8 @@ public class MyService extends AccessibilityService {
                     "com.google.android.gm",
                     "com.google.android.dialer",
                     "com.google.android.contacts",
-                    "com.google.android.apps.docs.editors.docs"
+                    "com.google.android.apps.docs.editors.docs",
+                    "com.google.android.googlequicksearchbox"
             ));
 
     ArrayList<String> browser_app_list = new ArrayList<>(
@@ -168,7 +169,7 @@ public class MyService extends AccessibilityService {
                                 }
                                 else{
 
-                                    if (allapps.contains(packages) && !extra.contains(packages)){
+                                    if (allapps.contains(packages) && !extra.contains(packages) && packages != "com.focusmonk"){
                                         if (obj.getBoolean("isBlock")){
                                             performGlobalAction(GLOBAL_ACTION_BACK);
                                             try{

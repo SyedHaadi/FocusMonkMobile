@@ -1,0 +1,53 @@
+{
+  "Mac" : [
+    {
+      "name" : "LZ4",
+      "hash" : "3e4bc0efaa8608a381b39e59813773a9e6b68567f8e6d452fd3d915b091bce5d",
+      "linking" : "static"
+    },
+    {
+      "name" : "OpenVPNAdapter",
+      "hash" : "82b725670cf682ad4ff6dea3f4c89369301af93bc525a06f7de8fba410f2ed8f",
+      "linking" : "dynamic"
+    },
+    {
+      "name" : "OpenVPNClient",
+      "hash" : "fa6b1790491683549fd8d738177b132a39a9c75e1d363b8e438ff66ecf64593d",
+      "linking" : "static"
+    },
+    {
+      "name" : "mbedTLS",
+      "hash" : "ccdaa1e2c4ff9f2d87e4cda19ab68be6cd5429586ad160da285c18c4012b9a01",
+      "linking" : "static"
+    }
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "0.8.0",
+  "iOS" : [
+    {
+      "name" : "LZ4",
+      "hash" : "5662c12a7481124e599523dcb82c4a93b1444fc6d358c7034cc9d6b676e55bbc",
+      "linking" : "static"
+    },
+    {
+      "name" : "OpenVPNAdapter",
+      "hash" : "23e7c1d5cdac929114ea0bdf3d08776d26c9f84fc455ad075f52910386b153a0",
+      "linking" : "dynamic"
+    },
+    {
+      "name" : "OpenVPNClient",
+      "hash" : "a1ae6113124891ebc577064b260e390c91e88aa80a5832de803f7ce5ed43fe2d",
+      "linking" : "static"
+    },
+    {
+      "name" : "mbedTLS",
+      "hash" : "2623d95bc404d23f1126996e07c45fbcf6715c19035a001ac7c2a974e27cc9b8",
+      "linking" : "static"
+    }
+  ]
+}

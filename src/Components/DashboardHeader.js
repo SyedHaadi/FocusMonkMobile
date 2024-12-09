@@ -19,6 +19,7 @@ const DashboardHeader = ({
 }) => {
 
   const userData = useSelector((state) => state?.userData?.user);
+  const languageData = useSelector((state) => state?.language?.language_data);
 
   return (
     <View style={styles.mainView} >
@@ -37,7 +38,7 @@ const DashboardHeader = ({
             <View style={styles.nameView}>
               <Text style={styles.nameText} >
                 {((userData?.first_name + userData?.last_name)?.length > 18) ?
-                  (((userData?.first_name + userData?.last_name)?.substring(0, 18 - 3)) + ' ...') :
+                  (((userData?.first_name + " " + userData?.last_name)?.substring(0, 18 - 3)) + ' ...') :
                   userData?.first_name + ' ' + userData?.last_name}
               </Text>
               <Text style={styles.devText} >
@@ -47,7 +48,7 @@ const DashboardHeader = ({
               </Text>
 
               {userData?.company_id?.isCompanyadmin ?
-                <Text style={styles.companyText} >Company Name: <Text style={[styles.companyText, { color: Color.White }]} >
+                <Text style={styles.companyText} >{languageData?.company_name}: <Text style={[styles.companyText, { color: Color.White }]} >
                   {((userData?.company_id?.companyname)?.length > 14) ?
                     (((userData?.company_id?.companyname)?.substring(0, 14 - 3)) + ' ...') :
                     userData?.company_id?.companyname}

@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     coinsView: {
         width: '100%',
         borderRadius: height_screen * 0.015,
-        paddingHorizontal: '5%',
+        paddingHorizontal: '4%',
         paddingTop: height_screen * 0.025,
         paddingBottom: height_screen * 0.015,
         backgroundColor: Color.White,
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
     coinMeterView: {
         width: '100%',
         borderRadius: height_screen * 0.015,
-        paddingHorizontal: '5%',
+        paddingHorizontal: '4%',
         paddingVertical: height_screen * 0.025,
         backgroundColor: Color.White,
         marginTop: height_screen * 0.018,
@@ -222,7 +222,7 @@ const styles = StyleSheet.create({
     collectionView: {
         width: '100%',
         borderRadius: height_screen * 0.015,
-        paddingHorizontal: '5%',
+        paddingHorizontal: '4%',
         paddingTop: height_screen * 0.018,
         paddingBottom: height_screen * 0.01,
         backgroundColor: Color.White,
@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
     },
     collectionText: {
         fontFamily: Font.Regular,
-        fontSize: height_screen * 0.019,
+        fontSize: height_screen * 0.017,
         color: Color.Grey,
         marginTop: height_screen * 0.0025
     },
@@ -257,8 +257,9 @@ const styles = StyleSheet.create({
     },
     trophyView: {
         backgroundColor: '#ebebeb',
-        width: width_screen * 0.27,
+        // width: width_screen * 0.27,
         paddingVertical: height_screen * 0.002,
+        paddingHorizontal: width_screen * 0.01,
         borderRadius: height_screen * 0.009,
         flexDirection: 'row',
         alignItems: 'center',
@@ -267,8 +268,9 @@ const styles = StyleSheet.create({
     },
     trophyView2: {
         backgroundColor: '#98ffe2',
-        width: width_screen * 0.27,
+        // width: width_screen * 0.27,
         paddingVertical: height_screen * 0.002,
+        paddingHorizontal: width_screen * 0.01,
         borderRadius: height_screen * 0.009,
         flexDirection: 'row',
         alignItems: 'center',
@@ -277,9 +279,9 @@ const styles = StyleSheet.create({
     },
     trophyText: {
         fontFamily: Font.Medium,
-        fontSize: height_screen * 0.018,
+        fontSize: height_screen * 0.016,
         color: Color.Grey,
-        marginRight: width_screen * 0.03,
+        marginRight: width_screen * 0.02,
         marginTop: height_screen * 0.0025
     },
     trophyImg: {

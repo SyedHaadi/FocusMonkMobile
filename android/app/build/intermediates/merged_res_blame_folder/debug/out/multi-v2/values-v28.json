@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.focusmonk.app-mergeDebugResources-36:/values-v28/values-v28.xml",
+            "outputFile": "com.focusmonk.app-mergeDebugResources-37:/values-v28/values-v28.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-3\\9d3763f77e164bd44b3c394ae1f9d820\\transformed\\appcompat-1.6.1\\res\\values-v28\\values-v28.xml",
+                    "source": "/Users/macuser/.gradle/caches/transforms-3/f463a211873750a5a590e8344e06ff8a/transformed/appcompat-1.6.1/res/values-v28/values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,8",
                         "startColumns": "4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-3\\7cf82d3939b51f7912f52aadbc758c78\\transformed\\material-1.1.0\\res\\values-v28\\values-v28.xml",
+                    "source": "/Users/macuser/.gradle/caches/transforms-3/ec616697f6d91bde14e45b6d371eb985/transformed/material-1.1.0/res/values-v28/values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

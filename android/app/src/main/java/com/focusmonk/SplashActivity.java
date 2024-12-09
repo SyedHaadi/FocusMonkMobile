@@ -37,12 +37,16 @@ public class SplashActivity extends AppCompatActivity {
 
         handler = new Handler();
         dialog = new AlertDialog.Builder(SplashActivity.this)
-                .setTitle("Permission Required!")
+                .setTitle("Accessibility Service Required")
                 .setCancelable(false)
-                .setMessage("Please allow permission for using this app.")
-                .setPositiveButton("Open", (dialog, which) -> {
+                .setMessage("FocusApp needs access to the AccessibilityService API to manage distractions by limiting non-essential apps. No personal data is collected or shared. Please enable this service to use the app's features.")
+                .setPositiveButton("I Understand", (dialog, which) -> {
                     Intent intent = new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS);
                     startActivity(intent);
+                })
+                .setNegativeButton("Cancel", (dialog, which) -> {
+                dialog.dismiss();
+            // Optionally, you can add any other action you want to perform when the user denies the permission
                 })
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .create();

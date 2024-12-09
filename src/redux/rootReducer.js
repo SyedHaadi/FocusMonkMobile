@@ -5,6 +5,7 @@ import authReducer from './Auth/authReducer';
 import scheduleReducer from './Schedule/ScheduleReducer';
 import userReducer from './User/UserReducer';
 import roadMapReducer from './RoadMap/RoadMapReducer';
+import languageReducer from './language/language.reducer';
 
 export const RootReducer = combineReducers({
   appLoading: loadingReducer,
@@ -12,6 +13,7 @@ export const RootReducer = combineReducers({
   apps: appsReducer,
   schedule: scheduleReducer,
   userData: userReducer,
-  roadMap: roadMapReducer
+  roadMap: roadMapReducer,
+  language: languageReducer
 });
 

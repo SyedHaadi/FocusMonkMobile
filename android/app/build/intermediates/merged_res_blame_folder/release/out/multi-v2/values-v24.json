@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.focusmonk.app-mergeReleaseResources-37:/values-v24/values-v24.xml",
+            "map": [
+                {
+                    "source": "/Users/macuser/.gradle/caches/transforms-3/f463a211873750a5a590e8344e06ff8a/transformed/appcompat-1.6.1/res/values-v24/values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
+                    }
+                }
+            ]
+        }
+    ]
+}

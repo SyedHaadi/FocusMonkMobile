@@ -71,6 +71,66 @@ export const loginAction = ({ email, password, navigation }) => async dispatch =
 
       // dispatch(setUser(loginRes?.data?.user));
       dispatch(getUserData());
+      navigation.replace('MainDashboard', { fromLogin: true });
+    }
+    else {
+      Toast.show({
+        type: 'error',
+        text1: 'Something went wrong!',
+      });
+    }
+
+  } catch (error) {
+    dispatch(setAppLoading(false));
+    if (error.toJSON().message === 'Network Error') {
+      Toast.show({
+        type: 'error',
+        text1: 'No internet connection !',
+      });
+    }
+    else if (error?.response?.data) {
+      Toast.show({
+        type: 'error',
+        text1: error?.response?.data?.message,
+      });
+    } else if (error?.request) {
+      Toast.show({
+        type: 'error',
+        text1: error?.request,
+      });
+    } else {
+      Toast.show({
+        type: 'error',
+        text1: error?.message,
+      });
+    }
+  }
+};
+
+export const loginWithGoogleAction = ({ type, device, token, navigation }) => async dispatch => {
+
+  const data = { 'type': type, 'social_token': token, 'device': device }
+
+  dispatch(setAppLoading(true));
+
+  try {
+    const loginRes = await axios.post(`${baseUrl}/employees/login`, data);
+
+    dispatch(setAppLoading(false));
+    if (loginRes?.status === 200) {
+      console.log("Login Response .......", loginRes?.data?.user?._id)
+      setLocalStorage(STORAGE_KEYS.TOKEN, loginRes?.data?.token);
+      setLocalStorage(STORAGE_KEYS.USER_ID, loginRes?.data?.user?._id);
+      setLocalStorage(STORAGE_KEYS.COMPANY_ID, loginRes?.data?.user?.company_id?._id);
+
+      if (Platform.OS == 'android') {
+        CalendarModule.createCalendarEvent('userid', loginRes?.data?.user?._id);
+        CalendarModule.createCalendarEvent('companyid', loginRes?.data?.user?.company_id?._id);
+        CalendarModule.createCalendarEvent('token', loginRes?.data?.token);
+      }
+
+      // dispatch(setUser(loginRes?.data?.user));
+      dispatch(getUserData());
       navigation.replace('MainDashboard');
     }
     else {
